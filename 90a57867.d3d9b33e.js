@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[20],{89:function(e){e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Welcome","permalink":"/ivendi-support.github.io/blog/welcome"},{"title":"Hello","permalink":"/ivendi-support.github.io/blog/hello-world"},{"title":"Hola","permalink":"/ivendi-support.github.io/blog/hola"}]}')}}]);

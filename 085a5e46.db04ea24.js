@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{68:function(o){o.exports=JSON.parse('{"allTagsPath":"/ivendi-support.github.io/blog/tags","slug":"hola","name":"hola","count":1,"permalink":"/ivendi-support.github.io/blog/tags/hola"}')}}]);
