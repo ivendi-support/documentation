@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[17],{86:function(s){s.exports=JSON.parse('{"allTagsPath":"/ivendi-support.github.io/blog/tags","slug":"docusaurus","name":"docusaurus","count":3,"permalink":"/ivendi-support.github.io/blog/tags/docusaurus"}')}}]);
