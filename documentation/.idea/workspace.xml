@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a24ba8e5-4c98-4029-99c3-79966900a5ee" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/documentation.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/babel.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/2019-05-28-hola.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/2019-05-29-hello-world.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/2019-05-30-welcome.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/FinanceCalc.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/GettingStartedQuoteware.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/PaymentSearch.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/Quoteware/CreditTiers.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/Quoteware/Widget.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/Quoteware/doc1.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/doc2.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/doc3.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/mdx.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docusaurus.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sidebars.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/custom.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/styles.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/.nojekyll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/CONVERT.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/ENGAGE.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/TRANSACT.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/undraw_docusaurus_mountain.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/undraw_docusaurus_react.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/undraw_docusaurus_tree.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1nhJioEbS92Og7t85XZC4GGQMrI" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docs/Quoteware" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a24ba8e5-4c98-4029-99c3-79966900a5ee" name="Default Changelist" comment="" />
+      <created>1611836519243</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1611836519243</updated>
+      <workItem from="1611836527321" duration="11000" />
+      <workItem from="1611836566435" duration="579000" />
+      <workItem from="1611852819558" duration="391000" />
+      <workItem from="1611919097510" duration="630000" />
+      <workItem from="1611923567434" duration="2805000" />
+      <workItem from="1612175370753" duration="584000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit" />
+  </component>
+</project>
