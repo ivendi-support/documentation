@@ -2,41 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a24ba8e5-4c98-4029-99c3-79966900a5ee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/documentation.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/babel.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/2019-05-28-hola.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/2019-05-29-hello-world.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/2019-05-30-welcome.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/FinanceCalc.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/GettingStartedQuoteware.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/PaymentSearch.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/Quoteware/CreditTiers.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/Quoteware/Widget.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/Quoteware/doc1.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/doc2.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/doc3.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/mdx.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docusaurus.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sidebars.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/css/custom.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/styles.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/.nojekyll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/CONVERT.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/ENGAGE.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/TRANSACT.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/undraw_docusaurus_mountain.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/undraw_docusaurus_react.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/undraw_docusaurus_tree.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/CTA/Apply.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/CTA/CFC.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/CTA/Custom.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/CTA/Reserve.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/Engage/Engage.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/Stockfeed/Stockfeed.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/Videos/HP.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/Videos/PCP.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docusaurus.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/docusaurus.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sidebars.js" beforeDir="false" afterPath="$PROJECT_DIR$/sidebars.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +71,7 @@
       <workItem from="1611852819558" duration="391000" />
       <workItem from="1611919097510" duration="630000" />
       <workItem from="1611923567434" duration="2805000" />
-      <workItem from="1612175370753" duration="584000" />
+      <workItem from="1612175370753" duration="4765000" />
     </task>
     <servers />
   </component>

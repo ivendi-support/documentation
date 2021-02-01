@@ -15,7 +15,8 @@ module.exports = {
       title: '',
       logo: {
         alt: 'iVendi Logo',
-        src: 'img/logo.svg',
+        src: 'img/logo-dark.png',
+        srcDark:'img/logo.svg'
       },
       items: [
         {
@@ -34,17 +35,17 @@ module.exports = {
     },
     footer: {
       style: 'dark',
+      logo:{
+        alt: 'Service Desk Institute',
+        src: 'img/SDI_Corporate_Membership_logo.png'
+      },
       links: [
         {
           title: 'Docs',
           items: [
             {
-              label: 'Style Guide',
+              label: 'Documentation',
               to: 'docs/',
-            },
-            {
-              label: 'Second Doc',
-              to: 'docs/doc2/',
             },
           ],
         },
@@ -52,16 +53,16 @@ module.exports = {
           title: 'Community',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'Facebook',
+              href: 'https://www.facebook.com/iVendiUK',
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              label: 'LinkedIn',
+              href: 'https://www.linkedin.com/company/ivendi',
             },
             {
               label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              href: 'https://www.twitter.com/iVendiLtd',
             },
           ],
         },
@@ -69,17 +70,17 @@ module.exports = {
           title: 'More',
           items: [
             {
-              label: 'Blog',
-              to: 'blog',
+              label: 'Youtube',
+              href: 'https://www.youtube.com/channel/UC1M23RFXOCEbElL7nB4O7hA',
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              label: 'Website',
+              href: 'https://www.ivendi.com',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} iVendi Ltd`,
     },
   },
   themes: ['@docusaurus/theme-live-codeblock'],
@@ -91,13 +92,13 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/ivendi-support/documentation/edit/',
+            'https://github.com/ivendi-support/documentation-src/edit/master/documentation/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
+            'https://github.com/ivendi-support/documentation-src/edit/master/documentation/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
