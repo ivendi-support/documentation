@@ -1,0 +1,126 @@
+---
+id: CFC
+title: Car Finance Check
+sidebar_label: Car Finance Check
+slug: /CFC
+---
+
+The Finance Check Call to Action widget provides an easy route into the new CarFinanceChecker.com eligibility check journey. Selecting the call to action will take the customer into the Free Finance Check application form, using a representative example.
+
+You can choose from many different styles to find the best fit for your website.
+
+The widget will always fill 100% of the width of its parent element; if you want the width to be smaller, simply wrap the embed script in a smaller element. The minimum width of the widget is 250px.
+
+Note: only one finance check widget may be present on the page at any one time.
+
+## Getting Started
+
+* Review the fields and values required to power the Finance Check Call to Action
+* Use our free demo to test the values
+* Embed the widget using our embed code - available in HTML, PHP & WordPress and Python
+
+
+
+## Parameters
+
+Before you can embed the widget in to your website, you will need to know the following values:
+
+`Denotes optional fields`
+
+|Field Name|Format|Description|
+|--- |--- |--- |
+|callToActionStyle|number|A number representing the style of widget (see style examples below)|
+|username|string|Your username used to access iVendi services|
+|quoteeUid|string|Unique ID for the dealership which the vehicle belongs to. (If you don't have this, please contact iVendi)|
+|class|car, lcv or motorbike|Class of the vehicle.|
+|condition|used or new|Condition of the vehicle|
+|vrm|string|Vehicle Registration Number|
+|registrationDate|DD/MM/YYYY|Registration Date of the vehicle|
+|`capCode`|string|Cap Code of the vehicle (See note on Cap Code below)|
+|`capId`|number|Cap Id of the vehicle|
+|cashPrice|number|Cash Price|
+|`vatIncluded`|true or false|If true, this indicates that VAT is already included in the cash price in the request. If false, the Finance Comparator will add VAT to the cash price to be displayed to the customer, provided the vehicle is vatQualifying. If not set, VAT calculations are ignored.|
+|`vatQualifying`|true or false|If true, this indicates that the vehicle is VAT Qualifying and is used to drive VAT calculations. This will be the case for most LCVs and all new vehicles. If false, this indicates that the vehicle is instead a VAT margin vehicle, and so VAT will not be calculated. If not set, VAT calculations are also ignored.|
+|currentOdometerReading|number|Current Odometer Reading|
+|vehicleImageUrl|string|URL for the image of the vehicle|
+|`term`|number|Preferred Term|
+|`cashDepositType`|flatRate or percentageOfCashPrice|flatRate (default) - apply cashDeposit as a flat value. percentageOfCashPrice - apply cashDeposit as a percentage of the cash price|
+|`cashDeposit`|number|value of cash deposit based on cashDepositType|
+|`annualDistance`|number|Expected Annual Mileage|
+|`dateOnForecourt`|dd/mm/yyyy|Date on Forecourt|
+
+:::note
+Where possible, please always provide either a capCode or capId to identify the vehicle. If these fields are not supplied then the VRM will be used to identify the vehicle, but only if your iVendi account supports this.
+:::
+
+### Call To Action Styles
+
+|callToActionStyle|Preview|
+|--- |--- |
+|1| ![1](./../assets/CFC/01.png) |
+|2|![1](./../assets/CFC/02.png)|
+|3|![1](./../assets/CFC/03.png)|
+|4|![1](./../assets/CFC/04.png)|
+|5|![1](./../assets/CFC/05.png)|
+|6|![1](./../assets/CFC/06.png)|
+|7|![1](./../assets/CFC/07.png)|
+|8|![1](./../assets/CFC/08.png)|
+|9|![1](./../assets/CFC/09.png)|
+|10|![1](./../assets/CFC/10.png)|
+|11|![1](./../assets/CFC/11.png)|
+|12|![1](./../assets/CFC/12.png)|
+|13|![1](./../assets/CFC/13.png)|
+|14|![1](./../assets/CFC/14.png)|
+|15|![1](./../assets/CFC/15.png)|
+|16|![1](./../assets/CFC/16.png)|
+|17|![1](./../assets/CFC/17.png)|
+|18|![1](./../assets/CFC/18.png)|
+
+## Demo
+
+export const Widget = () => (
+<iframe src="https://newvehicle.com/widgets/lib/finance-check-cta/?callToActionStyle=1&amp;username=www.ivendimotors.com&amp;quoteeUid=268E8202-338E-4B26-A6FE-74BCDAB0A357&amp;class=car&amp;condition=used&amp;vrm=CX17HHA&amp;registrationDate=04%2F06%2F2017&amp;cashPrice=10000&amp;currentOdometerReading=10000&amp;vehicleImageUrl=https%3A%2F%2Fmedia-psa.groupe-psa.com%2Fmedias%2Fdomain1%2Fmedia11848%2F2009228-r00lv2pybs-preview.jpg&amp;origin=https%3A%2F%2Fnewvehicle.com%2Fwidgets%2Ffinance-check-cta%2Fdemo&amp;widgetId=iv-finance-check-widget" id="iv-finance-check-widget" name="iv-finance-check-widget" class="iv-finance-check-widget"/>
+);
+
+<Widget/>
+
+## Code
+To embed the widget on your website, simply copy the following code and paste it into the part of the page where you want the widget to appear, adding in the values for each of the fields in the url. The script is loaded asynchronously so it wont block the rest of your page from loading.
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+  defaultValue="HTML"
+  values={[
+    { label: 'HTML', value: 'HTML', },
+    { label: 'PHP', value: 'php', },
+    { label: 'PYTHON', value: 'python', },
+  ]
+}>
+<TabItem value="HTML">
+
+```html
+<script src="newvehicle.com/widgets/lib/finance-comparator/loader.js?username=&quoteeUid=&class=&condition=&vrm=&registrationDate=&capCode=&capId=&cashPrice=&vatIncluded=&vatQualifying=&currentOdometerReading=&vehicleImageUrl=&cashDepositType=&cashDeposit=&term=&annualDistance=&dateOnForecourt=&usePersistedOptions=" async></script>
+```
+
+</TabItem>
+<TabItem value="php">
+
+```php
+<script src="newvehicle.com/widgets/lib/finance-comparator/loader.js?username=<?=username?>&quoteeUid=<?=quoteeUid?>&class=<?=class?>&condition=<?=condition?>&vrm=<?=vrm?>&registrationDate=<?=registrationDate?>&capCode=<?=capCode?>&capId=<?=capId?>&cashPrice=<?=cashPrice?>&vatIncluded=<?=vatIncluded?>&vatQualifying=<?=vatQualifying?>&currentOdometerReading=<?=currentOdometerReading?>&vehicleImageUrl=<?=vehicleImageUrl?>&cashDepositType=<?=cashDepositType?>&cashDeposit=<?=cashDeposit?>&term=<?=term?>&annualDistance=<?=annualDistance?>&dateOnForecourt=<?=dateOnForecourt?>&usePersistedOptions=<?=usePersistedOptions?>" async></script>
+```
+
+</TabItem>
+<TabItem value="python">
+
+```py
+<script src="newvehicle.com/widgets/lib/finance-comparator/loader.js?username=<%=username%>&quoteeUid=<%=quoteeUid%>&class=<%=class%>&condition=<%=condition%>&vrm=<%=vrm%>&registrationDate=<%=registrationDate%>&capCode=<%=capCode%>&capId=<%=capId%>&cashPrice=<%=cashPrice%>&vatIncluded=<%=vatIncluded%>&vatQualifying=<%=vatQualifying%>&currentOdometerReading=<%=currentOdometerReading%>&vehicleImageUrl=<%=vehicleImageUrl%>&cashDepositType=<%=cashDepositType%>&cashDeposit=<%=cashDeposit%>&term=<%=term%>&annualDistance=<%=annualDistance%>&dateOnForecourt=<%=dateOnForecourt%>&usePersistedOptions=<%=usePersistedOptions%>" async></script>
+```
+
+</TabItem>
+</Tabs>
+
+:::note
+The variables used here will be different to the ones inside your template, so will need to be updated accordingly. This may cause errors on your page until the fields are correct for your site.
+:::

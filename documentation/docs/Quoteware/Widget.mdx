@@ -1,0 +1,137 @@
+---
+id: Widget
+title: Widget
+sidebar_label: Widget
+slug: /Widget
+---
+The Finance Comparator is an embeddable widget that can be easily integrated with a full page advert on your website. The widget acts as the gateway to a fully compliant finance suite; providing customers with a finance calculator and range of finance products to suit their needs, an easy to use application form, and a secure account to save their applications for later use.
+
+:::note
+
+Only one comparator widget may be present on the page at any one time.
+
+:::
+
+## Getting Started
+* Review the fields and values required to power the Finance Comparator
+* Try out the widget in the live editor
+* Embed the widget using our embed code - available in HTML, PHP & WordPress and Python
+
+## Parameters
+Before you can embed the Finance Comparator in to your website, you will need to know the following values
+
+`Denotes optional fields`
+
+| Field Name | Format |Description |
+| --- | --- | --- |
+|username|string|Your username used to access iVendi services|
+|quoteeUid|string|Unique ID for the dealership which the vehicle belongs to. (If you don't have this, please contact iVendi)|
+|class|car, lcv, or motorbike|Class of the vehicle.|
+|condition|used or new|Condition of the vehicle|
+|vrm|string|Vehicle Registration Number|
+|registrationDate|DD/MM/YYYY|Registration Date of the vehicle|
+|`capCode`|string|Cap Code of the vehicle (See note on Cap Code below)|
+|`capId`|number|Cap Id of the vehicle|
+|cashPrice|number|Cash Price|
+|`vatIncluded` |true or false|If true, this indicates that VAT is already included in the cash price in the request. If false, the Finance Comparator will add VAT to the cash price to be displayed to the customer, provided the vehicle is vatQualifying. If not set, VAT calculations are ignored.|
+|`vatQualifying`|true or false|If true, this indicates that the vehicle is VAT Qualifying and is used to drive VAT calculations. This will be the case for most LCVs and all new vehicles. If false, this indicates that the vehicle is instead a VAT margin vehicle, and so VAT will not be calculated. If not set, VAT calculations are also ignored.|
+|currentOdometerReading|number|Current Odometer Reading|
+|vehicleImageUrl|string|URL for the image of the vehicle|
+|`term`|number|Preferred Term|
+|`cashDepositType`|flatRate or percentageOfCashPrice|flatRate (default) - apply cashDeposit as a flat value. percentageOfCashPrice - apply cashDeposit as a percentage of the cash price|
+|`cashDeposit`|number|value of cash deposit based on cashDepositType|
+|`annualDistance`|number|Expected Annual Mileage|
+|`dateOnForecourt`|dd/mm/yyyy|Date on Forecourt|
+|`usePersistedOptions`|true or false|Automatically remember deposit/term/mileage options entered by the user. (default true)|
+
+:::note
+
+Where possible, please always provide either a capCode or capId to identify the vehicle. If these fields are not supplied then the VRM will be used to identify the vehicle, but only if your iVendi account supports this.
+
+:::
+
+## Demo
+
+export const Widget = () => (
+<iframe src="https://newvehicle.com/widgets/lib/finance-comparator/?quoteeUid=268E8202-338E-4B26-A6FE-74BCDAB0A357&username=www.ivendimotors.com&class=car&condition=used&vrm=CX17HHA&registrationDate=04/06/2017&cashPrice=12000&vatIncluded=tru&vatQualifying=false&currentOdometerReading=12000&vehicleImageUrl=https://media-psa.groupe-psa.com/medias/domain1/media11848/2009228-r00lv2pybs-preview.jpg&cashDepositType=flatRate&cashDeposit=1000&annualDistance=10000&term=8000&usePersistedOptions=true&widgetId=iv-finance-widget" id="iv-finance-widget" name="iv-finance-widget" class="iv-finance-widget" onload="this.style.height=(this.contentWindow.document.body.scrollHeight+20)+'px';" async/>
+);
+
+<Widget></Widget>
+
+
+## Code
+
+To embed the widget on your website, simply copy the following code and paste it into the part of the page where you want the widget to appear, adding in the values for each of the fields in the url. The script is loaded asynchronously so it wont block the rest of your page from loading.
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+  defaultValue="HTML"
+  values={[
+    { label: 'HTML', value: 'HTML', },
+    { label: 'PHP', value: 'php', },
+    { label: 'PYTHON', value: 'python', },
+  ]
+}>
+<TabItem value="HTML">
+
+```html
+<script src="newvehicle.com/widgets/lib/finance-comparator/loader.js?username=&quoteeUid=&class=&condition=&vrm=&registrationDate=&capCode=&capId=&cashPrice=&vatIncluded=&vatQualifying=&currentOdometerReading=&vehicleImageUrl=&cashDepositType=&cashDeposit=&term=&annualDistance=&dateOnForecourt=&usePersistedOptions=" async/>
+```
+
+</TabItem>
+<TabItem value="php">
+
+```php
+<script src="newvehicle.com/widgets/lib/finance-comparator/loader.js?username=<?=username?>&quoteeUid=<?=quoteeUid?>&class=<?=class?>&condition=<?=condition?>&vrm=<?=vrm?>&registrationDate=<?=registrationDate?>&capCode=<?=capCode?>&capId=<?=capId?>&cashPrice=<?=cashPrice?>&vatIncluded=<?=vatIncluded?>&vatQualifying=<?=vatQualifying?>&currentOdometerReading=<?=currentOdometerReading?>&vehicleImageUrl=<?=vehicleImageUrl?>&cashDepositType=<?=cashDepositType?>&cashDeposit=<?=cashDeposit?>&term=<?=term?>&annualDistance=<?=annualDistance?>&dateOnForecourt=<?=dateOnForecourt?>&usePersistedOptions=<?=usePersistedOptions?>" async/>
+```
+
+</TabItem>
+<TabItem value="python">
+
+```py
+<script src="newvehicle.com/widgets/lib/finance-comparator/loader.js?username=<%=username%>&quoteeUid=<%=quoteeUid%>&class=<%=class%>&condition=<%=condition%>&vrm=<%=vrm%>&registrationDate=<%=registrationDate%>&capCode=<%=capCode%>&capId=<%=capId%>&cashPrice=<%=cashPrice%>&vatIncluded=<%=vatIncluded%>&vatQualifying=<%=vatQualifying%>&currentOdometerReading=<%=currentOdometerReading%>&vehicleImageUrl=<%=vehicleImageUrl%>&cashDepositType=<%=cashDepositType%>&cashDeposit=<%=cashDeposit%>&term=<%=term%>&annualDistance=<%=annualDistance%>&dateOnForecourt=<%=dateOnForecourt%>&usePersistedOptions=<%=usePersistedOptions%>" async/>
+```
+
+</TabItem>
+</Tabs>
+
+:::note
+The variables used here will be different to the ones inside your template, so will need to be updated accordingly. This may cause errors on your page until the fields are correct for your site.
+:::
+
+export const exampleVehicle = {
+Class: "Car", // The class of the vehicle, this can be 'Car', 'LCV' or 'Motorbike'
+Condition: "Used", // The condition of the vehicle, this can be 'Used' or 'New'
+RegistrationMark: "CX17HHA", // The vehicle registration mark or 'VRM'
+RegistrationDate: "04/06/2017", // The registration date of the vehicle.
+CAPCode: null, // This is the CAP Code string that identifies the particular vehicle model and derivative.
+CAPID: null, // Like the above, this is the shorter ID that identifies the vehicle derivative.
+CashPrice: 12000, // The cash price of the vehicle.
+VATIncluded: true, // Indicates whether or not VAT is included in the cash price.
+VATQualifying: false, // Indicates whether or not the vehicle qualifies for a VAT payment and is usually only ever 'true' for LCVs.
+OdometerReading: 12000, // The current mileage of the vehicle as read on the odometer meter.
+ImageURL: "https://media-psa.groupe-psa.com/medias/domain1/media11848/2009228-r00lv2pybs-preview.jpg" // Image URL.
+};
+
+
+export const financeParameters = {
+DepositType: "flatRate", // Indicated what kind of deposit we would like, either 'flatRate' or 'percentageOfCashPrice'.
+Deposit: 1000, // Desired default deposit.
+Term: 48, // Desired default term.
+AnnualMileage: 10000, // Desired default annual mileage.
+UsePersistedOptions: false, // This value will tell the calculator to cash a customers chosen deposits and remember them for future.
+};
+
+
+export const iVendiCredentials = {
+Username: "www.ivendimotors.com",
+QuoteeUID: "268E8202-338E-4B26-A6FE-74BCDAB0A357"
+};
+
+export const i = () => (
+   <iframe src={ 'https://newvehicle.com/widgets/lib/finance-comparator/loader.js?quoteeUid='+iVendiCredentials.QuoteeUID+'&username='+iVendiCredentials.Username+'&class='+exampleVehicle.Class+'&condition='+exampleVehicle.Condition+'&vrm='+exampleVehicle.RegistrationMark+'&registrationDate='+exampleVehicle.RegistrationDate+'&cashPrice='+exampleVehicle.CashPrice+'&vatIncluded='+exampleVehicle.VATIncluded+'&vatQualifying='+exampleVehicle.VATQualifying+'&currentOdometerReading='+exampleVehicle.OdometerReading+'&vehicleImageUrl='+exampleVehicle.ImageURL+'&cashDepositType='+financeParameters.DepositType+'&cashDeposit='+financeParameters.Deposit+'&annualDistance='+financeParameters.AnnualMileage+'&term='+financeParameters.Term+'&usePersistedOptions='+financeParameters.UsePersistedOptions+'&widgetId=iv-finance-widget'} />
+);
+
+<i></i>

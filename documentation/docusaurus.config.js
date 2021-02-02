@@ -1,7 +1,7 @@
 module.exports = {
   title: 'iVendi',
   tagline: 'The documentation for iVendi calculator, widgets and quoteware API',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://ivendi-support.github.io/documentation',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
