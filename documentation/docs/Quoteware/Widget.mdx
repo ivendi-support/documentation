@@ -52,6 +52,12 @@ Where possible, please always provide either a capCode or capId to identify the 
 
 ## Demo
 
+```jsx live
+
+ <iframe width={770+'px'} height={2000+'px'} src="https://newvehicle.com/widgets/lib/finance-comparator-beta/?username=www.drivingcleanercars.com&quoteeUid=F7DD2727-2EB3-4DF7-ACB4-47C10436312F&class=car&condition=used&vrm=GK64USE&registrationDate=07%2F09%2F2014&cashPrice=3750&currentOdometerReading=55879&vehicleImageUrl=https%3A%2F%2F67degreescdn.co.uk%2F132%2F3%2F146632%2Fscreenshot-2020-11-10-at-14.03.29.png%3Fwidth%3D350&crop=auto&term=60&cashDepositType=percentageOfCashPrice&cashDeposit=10&annualDistance=8000&capId=55532&usePersistedOptions=false&origin=https%3A%2F%2Fwww.drivingcleanercars.com%2Fused%2Fcars%2Fsuzuki%2Falto%2Fsz-4&widgetId=iv-finance-widget" id="iv-finance-widget" name="iv-finance-widget"></iframe>
+
+```
+
 export const Widget = () => (
 <iframe src="https://newvehicle.com/widgets/lib/finance-comparator/?quoteeUid=268E8202-338E-4B26-A6FE-74BCDAB0A357&username=www.ivendimotors.com&class=car&condition=used&vrm=CX17HHA&registrationDate=04/06/2017&cashPrice=12000&vatIncluded=tru&vatQualifying=false&currentOdometerReading=12000&vehicleImageUrl=https://media-psa.groupe-psa.com/medias/domain1/media11848/2009228-r00lv2pybs-preview.jpg&cashDepositType=flatRate&cashDeposit=1000&annualDistance=10000&term=8000&usePersistedOptions=true&widgetId=iv-finance-widget" id="iv-finance-widget" name="iv-finance-widget" class="iv-finance-widget" onload="this.style.height=(this.contentWindow.document.body.scrollHeight+20)+'px';" async/>
 );
