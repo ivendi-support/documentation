@@ -94,44 +94,52 @@ export const Widget = () => (
 ## Code
 To embed the widget on your website, simply copy the following code and paste it into the part of the page where you want the widget to appear, adding in the values for each of the fields in the url. The script is loaded asynchronously so it wont block the rest of your page from loading.
 
+
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs
     defaultValue="HTML"
     values={[
-        { label: 'HTML', value: 'HTML', },
-        { label: 'PHP', value: 'php', },
-        { label: 'PYTHON', value: 'python', },
+        {label: 'HTML', value: 'HTML',},
+        {label: 'PHP', value: 'php',},
+        {label: 'PYTHON', value: 'python',},
     ]
     }>
-<TabItem value="HTML">
+    <TabItem value="HTML">
 
-```html
+        ```html
 
-<script src="newvehicle.com/widgets/lib/finance-comparator/loader.js?username=&quoteeUid=&class=&condition=&vrm=&registrationDate=&capCode=&capId=&cashPrice=&vatIncluded=&vatQualifying=&currentOdometerReading=&vehicleImageUrl=&cashDepositType=&cashDeposit=&term=&annualDistance=&dateOnForecourt=&usePersistedOptions=" async/>
+        <script
+            src="newvehicle.com/widgets/lib/apply-cta/loader.js?scrollToSelector=&callToActionStyle=&username=&quoteeUid=&class=&condition=&vrm=&registrationDate=&capCode=&capId=&cashPrice=&vatIncluded=&vatQualifying=&currentOdometerReading=&vehicleImageUrl=&term=&cashDepositType=&cashDeposit=&annualDistance=&dateOnForecourt="
+            async></script>
 
-```
+        ```
 
-</TabItem>
-<TabItem value="php">
+    </TabItem>
+    <TabItem value="php">
 
-```php
+        ```php
 
-<script src="newvehicle.com/widgets/lib/finance-comparator/loader.js?username=<?=username?>&quoteeUid=<?=quoteeUid?>&class=<?=class?>&condition=<?=condition?>&vrm=<?=vrm?>&registrationDate=<?=registrationDate?>&capCode=<?=capCode?>&capId=<?=capId?>&cashPrice=<?=cashPrice?>&vatIncluded=<?=vatIncluded?>&vatQualifying=<?=vatQualifying?>&currentOdometerReading=<?=currentOdometerReading?>&vehicleImageUrl=<?=vehicleImageUrl?>&cashDepositType=<?=cashDepositType?>&cashDeposit=<?=cashDeposit?>&term=<?=term?>&annualDistance=<?=annualDistance?>&dateOnForecourt=<?=dateOnForecourt?>&usePersistedOptions=<?=usePersistedOptions?>" async/>
+        <script
+            src="newvehicle.com/widgets/lib/apply-cta/loader.js?scrollToSelector=<?=scrollToSelector?>&callToActionStyle=<?=callToActionStyle?>&username=<?=username?>&quoteeUid=<?=quoteeUid?>&class=<?=class?>&condition=<?=condition?>&vrm=<?=vrm?>&registrationDate=<?=registrationDate?>&capCode=<?=capCode?>&capId=<?=capId?>&cashPrice=<?=cashPrice?>&vatIncluded=<?=vatIncluded?>&vatQualifying=<?=vatQualifying?>&currentOdometerReading=<?=currentOdometerReading?>&vehicleImageUrl=<?=vehicleImageUrl?>&term=<?=term?>&cashDepositType=<?=cashDepositType?>&cashDeposit=<?=cashDeposit?>&annualDistance=<?=annualDistance?>&dateOnForecourt=<?=dateOnForecourt?>"
+            async></script>
 
-```
+        ```
 
-</TabItem>
-<TabItem value="python">
+    </TabItem>
+    <TabItem value="python">
 
-```py
+        ```py
 
-<script src="newvehicle.com/widgets/lib/finance-comparator/loader.js?username=<%=username%>&quoteeUid=<%=quoteeUid%>&class=<%=class%>&condition=<%=condition%>&vrm=<%=vrm%>&registrationDate=<%=registrationDate%>&capCode=<%=capCode%>&capId=<%=capId%>&cashPrice=<%=cashPrice%>&vatIncluded=<%=vatIncluded%>&vatQualifying=<%=vatQualifying%>&currentOdometerReading=<%=currentOdometerReading%>&vehicleImageUrl=<%=vehicleImageUrl%>&cashDepositType=<%=cashDepositType%>&cashDeposit=<%=cashDeposit%>&term=<%=term%>&annualDistance=<%=annualDistance%>&dateOnForecourt=<%=dateOnForecourt%>&usePersistedOptions=<%=usePersistedOptions%>" async/>
+        <script
+            src="newvehicle.com/widgets/lib/apply-cta/loader.js?scrollToSelector=<%=scrollToSelector%>&callToActionStyle=<%=callToActionStyle%>&username=<%=username%>&quoteeUid=<%=quoteeUid%>&class=<%=class%>&condition=<%=condition%>&vrm=<%=vrm%>&registrationDate=<%=registrationDate%>&capCode=<%=capCode%>&capId=<%=capId%>&cashPrice=<%=cashPrice%>&vatIncluded=<%=vatIncluded%>&vatQualifying=<%=vatQualifying%>&currentOdometerReading=<%=currentOdometerReading%>&vehicleImageUrl=<%=vehicleImageUrl%>&term=<%=term%>&cashDepositType=<%=cashDepositType%>&cashDeposit=<%=cashDeposit%>&annualDistance=<%=annualDistance%>&dateOnForecourt=<%=dateOnForecourt%>"
+            async></script>
 
-```
+        ```
 
-</TabItem>
+    </TabItem>
 </Tabs>
 
 :::note
