@@ -1,0 +1,177 @@
+---
+id: OpenApi
+title: Open Api Specification
+sidebar_label: Open Api Specification
+slug: /OpenApi
+---
+
+The OAS defines a standard, programming language-agnostic interface description for REST APIs, which allows both humans and computers to discover and understand the capabilities of a service without requiring access to source code, additional documentation, or inspection of network traffic. When properly defined via OAS, a consumer can understand and interact with the remote service with a minimal amount of implementation logic. Similar to what interface descriptions have done for lower-level programming, the OAS removes guesswork in calling a service.
+
+```yml
+openapi: 3.0.1
+info:
+  title: Quoteware3
+  description: OpenApi Definition of Quoteware3 endpoints
+  version: '0.1'
+servers:
+  - url: 'https://quoteware3.ivendi.com'
+paths:
+  /paymentsearch/:
+    post:
+      description: Allows a brief overview of what quotes are available for a vehicle
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Parameters:
+                  type: object
+                  properties:
+                    AnnualMileages:
+                      type: array
+                      items:
+                        type: integer
+                    Deposits:
+                      type: array
+                      items:
+                        type: integer
+                    Terms:
+                      type: array
+                      items:
+                        type: integer
+                    CreditTiers:
+                      type: array
+                      items:
+                        type: string
+                VehicleRequests:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      Vehicle:
+                        type: object
+                        properties:
+                          Type:
+                            type: string
+                          Identifier:
+                            type: string
+                          StockId: {}
+                          RegistrationDate:
+                            type: string
+                          CurrentMileage:
+                            type: integer
+                          CashPrice:
+                            type: integer
+                          RegistrationNumber:
+                            type: string
+                          IsNew:
+                            type: boolean
+                          IdentifierType:
+                            type: string
+                          ProductUid: {}
+                      Id: {}
+                      Dealer:
+                        type: string
+                Debug:
+                  type: boolean
+                Credentials:
+                  type: object
+                  properties:
+                    Username:
+                      type: string
+                    Mode:
+                      type: integer
+            examples:
+              '0':
+                value: "{\r\n\t\"Debug\": false,\r\n\t\"Credentials\": {\r\n\t\t\"Username\": \"www.ivendimotors.com\",\r\n\t\t\"Mode\": 0\r\n\t},\r\n\t\"Parameters\": {\r\n\t\t\"Terms\": [12, 24, 36, 42, 52, 60],\r\n\t\t\"AnnualMileages\": [10000, 11000, 12000],\r\n\t\t\"Deposits\": [500, 1000, 1500],\r\n    \"CreditTiers\": [\"\"]\r\n\t},\r\n\t\"VehicleRequests\": [{\r\n\t\t\"Id\": null,\r\n\t\t\"Dealer\": \"268E8202-338E-4B26-A6FE-74BCDAB0A357\",\r\n\t\t\"Vehicle\": {\r\n\t\t\t\"CashPrice\": 6999,\r\n\t\t\t\"IsNew\": false,\r\n\t\t\t\"Identifier\": \"14970\",\r\n\t\t\t\"IdentifierType\": \"RVC\",\r\n\t\t\t\"Type\": \"Motorbike\",\r\n\t\t\t\"StockId\": null,\r\n\t\t\t\"RegistrationNumber\": \"HF67VKK\",\r\n\t\t\t\"CurrentMileage\": 274,\r\n\t\t\t\"RegistrationDate\": \"01-09-2017\",\r\n\t\t\t\"ProductUid\": null\r\n\t\t}\r\n\t}]\r\n}"
+      responses:
+        '200':
+          description: Returns quotes available
+      servers:
+        - url: 'https://quoteware3.ivendi.com'
+    servers:
+      - url: 'https://quoteware3.ivendi.com'
+  /quotes:
+    post:
+      description: Allows for full quote generation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Credentials:
+                  type: object
+                  properties:
+                    Username:
+                      type: string
+                QuoteRequests:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      QuoteeUID:
+                        type: string
+                      GlobalRequestParameters:
+                        type: object
+                        properties:
+                          Term:
+                            type: string
+                      GlobalRequestSettings:
+                        type: object
+                        properties:
+                          AllowAdjustments:
+                            type: boolean
+                      Requests:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            Asset:
+                              type: object
+                              properties:
+                                Condition:
+                                  type: string
+                                IdentityType:
+                                  type: string
+                                RegistrationMark:
+                                  type: string
+                                RegistrationDate:
+                                  type: string
+                                Class:
+                                  type: string
+                                CurrentOdometerReading:
+                                  type: integer
+                                Identity:
+                                  type: string
+                                Source:
+                                  type: integer
+                            Figures:
+                              type: object
+                              properties:
+                                Asset:
+                                  type: object
+                                  properties:
+                                    AnnualDistance:
+                                      type: string
+                                    VATIncluded:
+                                      type: boolean
+                                    VATQualifying:
+                                      type: boolean
+                                CashPrice:
+                                  type: integer
+                                CashDeposit:
+                                  type: integer
+            examples:
+              '0':
+                value: "{\r\n\t\"Credentials\": {\r\n\t\t\"Username\": \"www.ivendimotors.com\"\r\n\t},\r\n\t\"QuoteRequests\": [{\r\n\t\t\"GlobalRequestParameters\": {\r\n\t\t\t\"Term\": \"48\"\r\n\t\t},\r\n\t\t\"GlobalRequestSettings\": {\r\n\t\t\t\"AllowAdjustments\": true\r\n\t\t},\r\n\t\t\"QuoteeUID\": \"268E8202-338E-4B26-A6FE-74BCDAB0A357\",\r\n\t\t\"Requests\": [{\r\n\t\t\t\"Asset\": {\r\n\t\t\t\t\"Class\": \"Car\",\r\n\t\t\t\t\"Condition\": \"Used\",\r\n\t\t\t\t\"CurrentOdometerReading\": 12000,\r\n\t\t\t\t\"Identity\": \"CX17HHA\",\r\n\t\t\t\t\"IdentityType\": \"VRM\",\r\n\t\t\t\t\"RegistrationDate\": \"04/06/2017\",\r\n\t\t\t\t\"RegistrationMark\": \"CX17HHA\",\r\n\t\t\t\t\"Source\": 1\r\n\t\t\t},\r\n\t\t\t\"Figures\": {\r\n\t\t\t\t\"Asset\": {\r\n\t\t\t\t\t\"AnnualDistance\": \"10000\",\r\n\t\t\t\t\t\"VATIncluded\": true,\r\n\t\t\t\t\t\"VATQualifying\": false\r\n\t\t\t\t},\r\n\t\t\t\t\"CashDeposit\": 1000,\r\n\t\t\t\t\"CashPrice\": 12000\r\n\t\t\t}\r\n\t\t}]\r\n\t}]\r\n}"
+      responses:
+        '200':
+          description: Returns full quote information
+      servers:
+        - url: 'https://quoteware3.ivendi.com'
+    servers:
+      - url: 'https://quoteware3.ivendi.com'
+
+```
