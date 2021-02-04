@@ -10,15 +10,15 @@ The OAS defines a standard, programming language-agnostic interface description 
 ```yml
 openapi: 3.0.1
 info:
-  title: Quoteware3
-  description: OpenApi Definition of Quoteware3 endpoints
+  title: defaultTitle
+  description: defaultDescription
   version: '0.1'
 servers:
   - url: 'https://quoteware3.ivendi.com'
 paths:
   /paymentsearch/:
     post:
-      description: Allows a brief overview of what quotes are available for a vehicle
+      description: Auto generated using Swagger Inspector
       requestBody:
         content:
           application/json:
@@ -87,25 +87,63 @@ paths:
                 value: "{\r\n\t\"Debug\": false,\r\n\t\"Credentials\": {\r\n\t\t\"Username\": \"www.ivendimotors.com\",\r\n\t\t\"Mode\": 0\r\n\t},\r\n\t\"Parameters\": {\r\n\t\t\"Terms\": [12, 24, 36, 42, 52, 60],\r\n\t\t\"AnnualMileages\": [10000, 11000, 12000],\r\n\t\t\"Deposits\": [500, 1000, 1500],\r\n    \"CreditTiers\": [\"\"]\r\n\t},\r\n\t\"VehicleRequests\": [{\r\n\t\t\"Id\": null,\r\n\t\t\"Dealer\": \"268E8202-338E-4B26-A6FE-74BCDAB0A357\",\r\n\t\t\"Vehicle\": {\r\n\t\t\t\"CashPrice\": 6999,\r\n\t\t\t\"IsNew\": false,\r\n\t\t\t\"Identifier\": \"14970\",\r\n\t\t\t\"IdentifierType\": \"RVC\",\r\n\t\t\t\"Type\": \"Motorbike\",\r\n\t\t\t\"StockId\": null,\r\n\t\t\t\"RegistrationNumber\": \"HF67VKK\",\r\n\t\t\t\"CurrentMileage\": 274,\r\n\t\t\t\"RegistrationDate\": \"01-09-2017\",\r\n\t\t\t\"ProductUid\": null\r\n\t\t}\r\n\t}]\r\n}"
       responses:
         '200':
-          description: Returns quotes available
+          description: Auto generated using Swagger Inspector
       servers:
         - url: 'https://quoteware3.ivendi.com'
     servers:
       - url: 'https://quoteware3.ivendi.com'
-  /quotes:
+  /quotes/:
     post:
-      description: Allows for full quote generation
+      description: Auto generated using Swagger Inspector
       requestBody:
         content:
           application/json:
             schema:
               type: object
               properties:
+                PlatformMeta: {}
+                HtmlOptions:
+                  type: object
+                  properties:
+                    EncryptedVrm: {}
+                    RegDate: {}
+                    Channel: {}
+                    Model: {}
+                    Derivative: {}
+                    DealerId: {}
+                    VehicleMileage: {}
+                    ImageUrl:
+                      type: string
+                    ReturnUrl: {}
+                    Make: {}
+                    IncludeOptions:
+                      type: boolean
+                    AsHtml:
+                      type: boolean
+                DealershipEnrichment:
+                  type: object
+                  properties:
+                    TraceRequest:
+                      type: boolean
+                    Email: {}
+                    SearchMeta:
+                      type: string
+                    UserAgent: {}
+                    IpAddress:
+                      type: string
+                    PersistRequestResponse:
+                      type: boolean
+                    Postcode:
+                      type: string
+                    UserGenerated:
+                      type: boolean
                 Credentials:
                   type: object
                   properties:
                     Username:
                       type: string
+                    Mode:
+                      type: integer
                 QuoteRequests:
                   type: array
                   items:
@@ -116,36 +154,62 @@ paths:
                       GlobalRequestParameters:
                         type: object
                         properties:
-                          Term:
+                          CommissionType:
                             type: string
-                      GlobalRequestSettings:
-                        type: object
-                        properties:
-                          AllowAdjustments:
-                            type: boolean
+                          ComputationPath:
+                            type: string
+                          RegularPayment:
+                            type: integer
+                          Rate:
+                            type: integer
+                          PaymentRangeFrom:
+                            type: integer
+                          Commission:
+                            type: integer
+                          TermUnit:
+                            type: string
+                          PaymentRangeTo:
+                            type: integer
+                          Term:
+                            type: integer
+                          RateType:
+                            type: string
+                      GlobalRequestSettings: {}
+                      IsPlatformProductRequest:
+                        type: boolean
+                      ProductRequestUID: {}
                       Requests:
                         type: array
                         items:
                           type: object
                           properties:
+                            RequestSettings: {}
                             Asset:
                               type: object
                               properties:
                                 Condition:
                                   type: string
-                                IdentityType:
-                                  type: string
                                 RegistrationMark:
+                                  type: string
+                                IdentityType:
                                   type: string
                                 RegistrationDate:
                                   type: string
-                                Class:
-                                  type: string
+                                StockLocation: {}
                                 CurrentOdometerReading:
                                   type: integer
+                                Source:
+                                  type: string
+                                StockingDate: {}
+                                EntityType:
+                                  type: string
+                                StockIdentity:
+                                  type: string
+                                Class:
+                                  type: string
                                 Identity:
                                   type: string
-                                Source:
+                                CubicCentimetres:
                                   type: integer
                             Figures:
                               type: object
@@ -153,22 +217,34 @@ paths:
                                 Asset:
                                   type: object
                                   properties:
+                                    PartExchange:
+                                      type: integer
                                     AnnualDistance:
-                                      type: string
+                                      type: integer
+                                    ManualResidualValue:
+                                      type: integer
+                                    ResidualValueMonth:
+                                      type: integer
+                                    ResidualValueYear:
+                                      type: integer
                                     VATIncluded:
-                                      type: boolean
+                                      type: string
+                                    Extras: {}
+                                    OutstandingSettlement:
+                                      type: integer
                                     VATQualifying:
-                                      type: boolean
+                                      type: string
                                 CashPrice:
                                   type: integer
                                 CashDeposit:
                                   type: integer
+                            RequestParameters: {}
             examples:
               '0':
-                value: "{\r\n\t\"Credentials\": {\r\n\t\t\"Username\": \"www.ivendimotors.com\"\r\n\t},\r\n\t\"QuoteRequests\": [{\r\n\t\t\"GlobalRequestParameters\": {\r\n\t\t\t\"Term\": \"48\"\r\n\t\t},\r\n\t\t\"GlobalRequestSettings\": {\r\n\t\t\t\"AllowAdjustments\": true\r\n\t\t},\r\n\t\t\"QuoteeUID\": \"268E8202-338E-4B26-A6FE-74BCDAB0A357\",\r\n\t\t\"Requests\": [{\r\n\t\t\t\"Asset\": {\r\n\t\t\t\t\"Class\": \"Car\",\r\n\t\t\t\t\"Condition\": \"Used\",\r\n\t\t\t\t\"CurrentOdometerReading\": 12000,\r\n\t\t\t\t\"Identity\": \"CX17HHA\",\r\n\t\t\t\t\"IdentityType\": \"VRM\",\r\n\t\t\t\t\"RegistrationDate\": \"04/06/2017\",\r\n\t\t\t\t\"RegistrationMark\": \"CX17HHA\",\r\n\t\t\t\t\"Source\": 1\r\n\t\t\t},\r\n\t\t\t\"Figures\": {\r\n\t\t\t\t\"Asset\": {\r\n\t\t\t\t\t\"AnnualDistance\": \"10000\",\r\n\t\t\t\t\t\"VATIncluded\": true,\r\n\t\t\t\t\t\"VATQualifying\": false\r\n\t\t\t\t},\r\n\t\t\t\t\"CashDeposit\": 1000,\r\n\t\t\t\t\"CashPrice\": 12000\r\n\t\t\t}\r\n\t\t}]\r\n\t}]\r\n}"
+                value: "{\r\n   \"HtmlOptions\":{\r\n      \"IncludeOptions\":false,\r\n      \"AsHtml\":false,\r\n      \"ImageUrl\":\"https://sampleimageforthecaronsale.png \",\r\n      \"ReturnUrl\":null,\r\n      \"Make\":null,\r\n      \"Model\":null,\r\n      \"Derivative\":null,\r\n      \"Channel\":null,\r\n      \"RegDate\":null,\r\n      \"DealerId\":null,\r\n      \"VehicleMileage\":null,\r\n      \"EncryptedVrm\":null\r\n   },\r\n   \"Credentials\":{\r\n      \"Username\":\"www.ivendimotors.com\",\r\n      \"Mode\":0\r\n   },\r\n   \"DealershipEnrichment\":{\r\n      \"IpAddress\":\"188.29.164.138\",\r\n      \"Email\":null,\r\n      \"Postcode\":\"BL40PJ\",\r\n      \"SearchMeta\":\"{\\\"IsPaymentSearch\\\":\\\"True\\\",\\\"MinPrice\\\": \\\"-1\\\",\\\"MaxPrice\\\":\\\"-1\\\" ,\\\"MinPaymentMonthlyCost\\\":\\\"-1\\\",\\\"MaxPaymentMonthlyCost\\\":\\\"-1\\\"}\",\r\n      \"UserAgent\":null,\r\n      \"UserGenerated\":true,\r\n      \"TraceRequest\":false,\r\n      \"PersistRequestResponse\":true\r\n   },\r\n   \"QuoteRequests\":[\r\n      {\r\n         \"ProductRequestUID\":null,\r\n         \"IsPlatformProductRequest\":false,\r\n         \"QuoteeUID\":\"268E8202-338E-4B26-A6FE-74BCDAB0A357\",\r\n         \"GlobalRequestSettings\":null,\r\n         \"GlobalRequestParameters\":{\r\n            \"Rate\":0,\r\n            \"RateType\":\"Default\",\r\n            \"Commission\":0,\r\n            \"CommissionType\":\"Default\",\r\n            \"ComputationPath\":\"Default\",\r\n            \"Term\":54,\r\n            \"TermUnit\":\"Default\",\r\n            \"PaymentRangeFrom\":0,\r\n            \"PaymentRangeTo\":0,\r\n            \"RegularPayment\":0\r\n         },\r\n         \"Requests\":[\r\n            {\r\n               \"Figures\":{\r\n                  \"CashPrice\":7000,\r\n                  \"CashDeposit\":1000,\r\n                  \"Asset\":{\r\n                     \"ManualResidualValue\":0,\r\n                     \"ResidualValueYear\":0,\r\n                     \"ResidualValueMonth\":0,\r\n                     \"AnnualDistance\":10000,\r\n                     \"PartExchange\":0,\r\n                     \"OutstandingSettlement\":0,\r\n                     \"VATIncluded\":\"None\",\r\n                     \"VATQualifying\":\"None\",\r\n                     \"Extras\":null\r\n                  }\r\n               },\r\n               \"Asset\":{\r\n                  \"CurrentOdometerReading\":1300,\r\n                  \"RegistrationDate\":\"04/06/2017\",\r\n                  \"RegistrationMark\":\"CX17HHA\",\r\n                  \"Condition\":\"Default\",\r\n                  \"Source\":\"Default\",\r\n                  \"Identity\":\"CX17HHA\",\r\n                  \"IdentityType\":\"VRM\",\r\n                  \"StockIdentity\":\"39736298\",\r\n                  \"StockingDate\":null,\r\n                  \"StockLocation\":null,\r\n                  \"Class\":\"Car\",\r\n                  \"CubicCentimetres\":0,\r\n                  \"EntityType\":\"None\"\r\n               },\r\n               \"RequestSettings\":null,\r\n               \"RequestParameters\":null\r\n            }\r\n         ]\r\n      }\r\n   ],\r\n   \"PlatformMeta\":null\r\n}"
       responses:
         '200':
-          description: Returns full quote information
+          description: Auto generated using Swagger Inspector
       servers:
         - url: 'https://quoteware3.ivendi.com'
     servers:

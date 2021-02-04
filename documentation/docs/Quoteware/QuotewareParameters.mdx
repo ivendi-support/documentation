@@ -1,0 +1,64 @@
+---
+id: QuotewareParameters
+title: Quoteware Parameters
+sidebar_label: Quoteware Parameters
+slug: /QuotewareParameters
+---
+
+The table on this page contains the full definition and all parameters available in a quoteware request.
+
+`Denotes Mandatory Field`
+
+| Grouping | Property | Type | Description |Value|
+| --- | --- | --- | --- | --- |
+| Credentials |`Username`| string |Your username used to access iVendi services|Alphanumeric max 30 characters|
+|Dealer Enrichment Data| IpAddress |string||Alphanumeric max 15 characters|
+|Dealer Enrichment Data| Email |string||Alphanumeric max 20 characters|
+|Dealer Enrichment Data| Postcode |string||Alphanumeric max 10 characters|
+|Dealer Enrichment Data| SearchMeta |string||Alphanumeric max 255 characters|
+|Dealer Enrichment Data| UserGenerated |boolean||True/false|
+|UID| `QuoteeUID` |string|Uniquely identifies the quotee and therefore quotation parameters & allowable products||
+|UID| GlobalRequestSettings |RequestSettings|If given, then these settings override any preconfigured settings|RequestSettings Object|
+|UID| GlobalRequestParameters |RequestParameters|If given, then these parameteres override any preconfigured parameters. Do not override unless given a specific need discussed with iVendi|RequestParameters Object|
+|UID| `Requests` |Request (Array)|Details of the assets and figures to quote for|Array of 1 or more Request objects|
+|RequestSettings| SortBy|SortBy (Enum)|The order any quotes will be returned in. Best quote presented in array position 0 |Default 0, Commision 0, Payment 2, APR 3|
+|RequestSettings| IncludeRequest|Boolean|Return details of the request objects in the quote response  |True/False|
+|RequestParameters| Rate|Double|Used in combination with ComputationPath  |Typically 0.0 to 30.0|
+|RequestParameters| RateType|RateType (Enum)|Used in combination with ComputationPath  |Default 0, Customer Rate 1, APR 2|
+|RequestParameters| Commission|Double |Required commission for quotee  ||
+|RequestParameters| CommissionType | CommissionType (Enum) |Used in combination with Commission and ComputationPath  |Default 0, Fixed Amount 1, Percentage of Cash Price 2, Precentage of Advance 3|
+|RequestParameters| ComputationPath | ComputationPath (Enum) |How to Calculate the payment, taking in to account rates and commissions  |Default 0, From Commission To Payment 1, From Customer Rate to Payment 2, From APR to Payment 3|
+|RequestParameters| Term | Integer | Preiod the quotation should be calculated over |Typically 12 to 60 or 52 to 260|
+|RequestParameters| TermUnit | TermUnit (Enum) |Unit of the term period |Default 0, Months 1, Weeks 2|
+|RequestParameters| PaymentRangeFrom | Double |Optional from and to payment range used to filter assets to only those within range. Noted results indicated with "WithinPaymentRange" text |£200|
+|RequestParameters| PaymentRangeTo | Double |Optional from and to payment range used to filter assets to only those within range. Noted results indicated with "WithinPaymentRange" text |£300|
+|Request type| `Figures` | RequestFigures |Details of the asset figures, such as Cash Price |RequestFigures Object|
+|Request type| `Asset` | RequestAsset |Asset specific Request details |Specific RequestAsset Object|
+|Request type| RequestSettings | RequestSettings |Request specific settings |RequestSettings Object|
+|Request type| RequestParameters | RequestParameters |Request specific parameters |RequestParameters Object|
+|Request figures| `CashPrice` | Double |Selling price of asset ||
+|Request figures| `CashDeposit` | Double |Customer contribution to offset against CashPrice ||
+|Request figures| `Asset` | RequestFigureAsset |Asset specific figure details|Specific RequestFiguresAsset Object|
+|Request Asset| `CurrentOdometerReading` | Integer |Vehicles current odometer reading ||
+|Request Asset| `RegistrationDate` | Date |Date vehicle is registered with DVLA/DLA: Not required if VRM lookup enabled | Contemporary Date|
+|Request Asset| `Condition` | MotorVehicleCondition (Enum) |Whether the vehicle is new or used | Defualt 0, New 1, Used 2|
+|Request Asset| Source | MotorVehicleSource (Enum) |Whether the vehicle is from the current region| Defualt 0, Region Current 1, Region European Union 2, Region Grey 3|
+|Request Asset| `Identity` | String |Vehicle Registration Mark (VRM), Vehicle identity Number (VIN), Residual Value Code (RVC)||
+|Request Asset| `IdentityType` | MotorVehicleIdentityType (Enum) |What is the identity chosen from above|Default 0, VRM 1, VIN 2, RVC 3|
+|Request Asset| `RegistrationMark` | String|Vehicle registration mark if known|Valid VRM for used vehicle, "New" for a new vehicle if no VRM yet|
+|Request Asset| StockIdentity | String|The quotees unique identifier for the vehicle. Will be returned in the ResultAssetMotorVehicle|Unique string|
+|Request Asset| StockingDate | Date |Date hte asset entered stock. Allows for the change of defaults based on the age of the asset|Date|
+|Request Asset| StockLocation | String |Unique ID for the location of the vehicle||
+|Request Asset| CubicCentimetres | Integer |CC of the engine size||
+|Request Asset|`Class` | MotorVehicleClasee (Enum) |Type of vehicle|Default 0, Car 1, LCV 2, Motorbike 3|
+|Request figures Asset| ManualResidualValue | Double| Overrides calculated RV values and is used during quoting. May result in quote not being valid with lender |Asset, Term and Annual Distance Dependant|
+|Request figures Asset| `AnnualDistance` | Integer| Annual Distance Required for PCP quoting|typically 5000 to 45000|
+|Request figures Asset| PartExchange | Double | Value of existing motor vehicle to add to Cash Deposit|Asset Dependent|
+|Request figures Asset| OutstandingSettlement | Double | Amount of current loan still outstanding that needs to be settled. Will be deducted from total deposit|Asset Dependent|
+|Request figures Asset| VATincluded | Boolean | Whether the Cash Price includes VAT|True/False|
+|Request figures Asset| VATQualifying | Boolean | Is the asset VAT Qualifiying. Normally used for commercial Assets where VAT has been reclaimed|True/False|
+|Request figures Asset| Extras | RequestFiguresExtrasAssetMotorVehicle | Breakdown of Accessories, insurances and warranties if any. Cash Price to include all these figures|RequestFiguresExtrasAssetMotorVehicle Object|
+|Request figures extras Asset| Accessories | Double | Price of Accessories such as helmet, sat nave etc||
+|Request figures extras Asset| Insurances | Double | Price of Insurance such as road, key, tyre||
+|Request figures extras Asset| Warranties | Double | Price of Warranties||
+|Request figures extras Asset| Other | Double | Anything additional not covered above||
