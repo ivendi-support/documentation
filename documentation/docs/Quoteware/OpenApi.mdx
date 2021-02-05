@@ -18,7 +18,7 @@ servers:
 paths:
   /paymentsearch/:
     post:
-      description: Auto generated using Swagger Inspector
+      description: The payment search API enpoint the generates a lighter version of a full quote
       requestBody:
         content:
           application/json:
@@ -87,14 +87,14 @@ paths:
                 value: "{\r\n\t\"Debug\": false,\r\n\t\"Credentials\": {\r\n\t\t\"Username\": \"www.ivendimotors.com\",\r\n\t\t\"Mode\": 0\r\n\t},\r\n\t\"Parameters\": {\r\n\t\t\"Terms\": [12, 24, 36, 42, 52, 60],\r\n\t\t\"AnnualMileages\": [10000, 11000, 12000],\r\n\t\t\"Deposits\": [500, 1000, 1500],\r\n    \"CreditTiers\": [\"\"]\r\n\t},\r\n\t\"VehicleRequests\": [{\r\n\t\t\"Id\": null,\r\n\t\t\"Dealer\": \"268E8202-338E-4B26-A6FE-74BCDAB0A357\",\r\n\t\t\"Vehicle\": {\r\n\t\t\t\"CashPrice\": 6999,\r\n\t\t\t\"IsNew\": false,\r\n\t\t\t\"Identifier\": \"14970\",\r\n\t\t\t\"IdentifierType\": \"RVC\",\r\n\t\t\t\"Type\": \"Motorbike\",\r\n\t\t\t\"StockId\": null,\r\n\t\t\t\"RegistrationNumber\": \"HF67VKK\",\r\n\t\t\t\"CurrentMileage\": 274,\r\n\t\t\t\"RegistrationDate\": \"01-09-2017\",\r\n\t\t\t\"ProductUid\": null\r\n\t\t}\r\n\t}]\r\n}"
       responses:
         '200':
-          description: Auto generated using Swagger Inspector
+          description: A json response with the available quotes for specified vehicle
       servers:
         - url: 'https://quoteware3.ivendi.com'
     servers:
       - url: 'https://quoteware3.ivendi.com'
   /quotes/:
     post:
-      description: Auto generated using Swagger Inspector
+      description: The endpoint to hit to generate a full quote response
       requestBody:
         content:
           application/json:
@@ -244,7 +244,7 @@ paths:
                 value: "{\r\n   \"HtmlOptions\":{\r\n      \"IncludeOptions\":false,\r\n      \"AsHtml\":false,\r\n      \"ImageUrl\":\"https://sampleimageforthecaronsale.png \",\r\n      \"ReturnUrl\":null,\r\n      \"Make\":null,\r\n      \"Model\":null,\r\n      \"Derivative\":null,\r\n      \"Channel\":null,\r\n      \"RegDate\":null,\r\n      \"DealerId\":null,\r\n      \"VehicleMileage\":null,\r\n      \"EncryptedVrm\":null\r\n   },\r\n   \"Credentials\":{\r\n      \"Username\":\"www.ivendimotors.com\",\r\n      \"Mode\":0\r\n   },\r\n   \"DealershipEnrichment\":{\r\n      \"IpAddress\":\"188.29.164.138\",\r\n      \"Email\":null,\r\n      \"Postcode\":\"BL40PJ\",\r\n      \"SearchMeta\":\"{\\\"IsPaymentSearch\\\":\\\"True\\\",\\\"MinPrice\\\": \\\"-1\\\",\\\"MaxPrice\\\":\\\"-1\\\" ,\\\"MinPaymentMonthlyCost\\\":\\\"-1\\\",\\\"MaxPaymentMonthlyCost\\\":\\\"-1\\\"}\",\r\n      \"UserAgent\":null,\r\n      \"UserGenerated\":true,\r\n      \"TraceRequest\":false,\r\n      \"PersistRequestResponse\":true\r\n   },\r\n   \"QuoteRequests\":[\r\n      {\r\n         \"ProductRequestUID\":null,\r\n         \"IsPlatformProductRequest\":false,\r\n         \"QuoteeUID\":\"268E8202-338E-4B26-A6FE-74BCDAB0A357\",\r\n         \"GlobalRequestSettings\":null,\r\n         \"GlobalRequestParameters\":{\r\n            \"Rate\":0,\r\n            \"RateType\":\"Default\",\r\n            \"Commission\":0,\r\n            \"CommissionType\":\"Default\",\r\n            \"ComputationPath\":\"Default\",\r\n            \"Term\":54,\r\n            \"TermUnit\":\"Default\",\r\n            \"PaymentRangeFrom\":0,\r\n            \"PaymentRangeTo\":0,\r\n            \"RegularPayment\":0\r\n         },\r\n         \"Requests\":[\r\n            {\r\n               \"Figures\":{\r\n                  \"CashPrice\":7000,\r\n                  \"CashDeposit\":1000,\r\n                  \"Asset\":{\r\n                     \"ManualResidualValue\":0,\r\n                     \"ResidualValueYear\":0,\r\n                     \"ResidualValueMonth\":0,\r\n                     \"AnnualDistance\":10000,\r\n                     \"PartExchange\":0,\r\n                     \"OutstandingSettlement\":0,\r\n                     \"VATIncluded\":\"None\",\r\n                     \"VATQualifying\":\"None\",\r\n                     \"Extras\":null\r\n                  }\r\n               },\r\n               \"Asset\":{\r\n                  \"CurrentOdometerReading\":1300,\r\n                  \"RegistrationDate\":\"04/06/2017\",\r\n                  \"RegistrationMark\":\"CX17HHA\",\r\n                  \"Condition\":\"Default\",\r\n                  \"Source\":\"Default\",\r\n                  \"Identity\":\"CX17HHA\",\r\n                  \"IdentityType\":\"VRM\",\r\n                  \"StockIdentity\":\"39736298\",\r\n                  \"StockingDate\":null,\r\n                  \"StockLocation\":null,\r\n                  \"Class\":\"Car\",\r\n                  \"CubicCentimetres\":0,\r\n                  \"EntityType\":\"None\"\r\n               },\r\n               \"RequestSettings\":null,\r\n               \"RequestParameters\":null\r\n            }\r\n         ]\r\n      }\r\n   ],\r\n   \"PlatformMeta\":null\r\n}"
       responses:
         '200':
-          description: Auto generated using Swagger Inspector
+          description: Json response with a full quote containing all the information required.
       servers:
         - url: 'https://quoteware3.ivendi.com'
     servers:

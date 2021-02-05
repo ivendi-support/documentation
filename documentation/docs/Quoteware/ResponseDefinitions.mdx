@@ -1,0 +1,45 @@
+---
+id: ResponseDefinitions
+title: Quoteware Response Definitions
+sidebar_label: Quoteware Response Definitions
+slug: /ResponseDefinitions
+---
+The table on this page contains the full definition and all parameters available in a quoteware response. The table is split up by the different objects that form a whole response to allow for easier readability. To see how a full response is formed, see this [example response](ExampleQuotewareResponse)
+
+### Quote response types
+
+| Grouping | Property | Type | Description |Value|
+| --- | --- | --- | --- | --- |
+| Quote response types |QuotedResultsUID| string |UID of the Quoted QuoteResult Objects||
+| Quote response types |ResponseUID| string |UID of the QuoteResponse Object||
+| Quote response types |QuoteResults | QuoteResult (Array) |Array of QuoteResult Objects|Null or array of quote results|
+| Quote response types |hasQuoteResults | Boolean|Whether there are any QuoteResult Objects|True/False|
+| Quote response types |hasErrors | Boolean|Whether there are any Error Objects present| True/False|
+| Quote response types |hasWarnings | Boolean|Whether there are any Warnings Objects present|True/False|
+| Quote response types |Warnings | Warnings |Details of any private or public warnings|Null or Warnings  Object|
+| Quote response types |Errors | Errors |Details of any private or public errors|Null or Errors  Object|
+
+### Quote Result
+| Grouping | Property | Type | Description |Value|
+| --- | --- | --- | --- | --- |
+| Quote result |QuotedResultUID | String |Uid of the quoted result object||
+| Quote result |Results | Result (Array) |Array of Result Objects|Null or array of Result  Objects|
+| Quote result |hasResults | Boolean|Whether there are any Result Objects|True/False|
+| Quote result |QuoteeUID | String|UID of the quotee used for quoting purposes||
+| Quote result |ProductRequestUID | String|UID of the ProductRequestUID used for quoting purposes||
+| Quote result |QuoteRequest | QuoteRequest|If requested a copy of the submitted QuoteRequest Object xcluding individual Request Objects||
+| Quote result |hasErrors | Boolean|Whether there are any Error Objects|True/False|
+| Quote result |hasWarnings | Boolean|Whether there are any Warning Objects|True/False|
+| Quote result |Warnings | Warnings|Details of private or public warnings|Null or Warnings object|
+| Quote result |Errors | Errors|Details of private or public errors|Null or Errors object|
+
+
+### Result type
+
+| Grouping | Property | Type | Description |Value|
+| --- | --- | --- | --- | --- |
+| Result type |Asset | ResultAsset |Asset specific details given and calculated during quoting||
+| Result type |ResultUID | String |UID of the Result object||
+| Result type |QuotedProductPackageUID | String |UID of Quoted package of groups of ProductRequestUID is a package||
+| Result type |ProductPackageUID | String |UID of package if ProductRequestUID is a package||
+| Result type |ProductGroups | ProductGroup (Array) |Array of ProductGroup Objects|Null or Array of ProductGroup Objects|
