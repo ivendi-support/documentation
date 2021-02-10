@@ -4,3 +4,22 @@ title: Hire Purchase
 sidebar_label: Hire Purchase
 slug: /HP
 ---
+
+iVendi have a suite of videos available which explain various examples of car finance products to potential customers. These cover:
+
+Hire Purchase (HP)
+Personal Contract Purchase (PCP)
+Lease Purchase (LP)
+Conditional Sale (CS)
+Why Dealer Finance?
+Why Apply?
+Gap Insurance
+Paint Protection
+
+If you are interested in integrating any of these videos on to your website then please contact support@ivendi.com for further details. An example video can be seen here:
+
+``` jsx live
+
+<iframe src="//newvehicle.com/video/fca-hirepurchase?videoFoam=true" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="270" height="152"></iframe>
+
+```
