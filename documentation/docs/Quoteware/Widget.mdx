@@ -54,6 +54,11 @@ Where possible, please always provide either a capCode or capId to identify the 
 
 Have a go playing with the editor below.
 
+:::important
+
+Please note the below is a copy of the generated iframe from the script tag, and is not intended as a demonstration of the actual integration of the widget. It is there for you to play around with the widget parameters. For the integration script see the code section below.
+:::
+
 ```jsx live
 
 <iframe src="https://newvehicle.com/widgets/lib/finance-comparator/?quoteeUid=268E8202-338E-4B26-A6FE-74BCDAB0A357&username=www.ivendimotors.com&class=car&condition=used&vrm=CX17HHA&registrationDate=04/06/2017&cashPrice=12000&vatIncluded=tru&vatQualifying=false&currentOdometerReading=12000&vehicleImageUrl=https://media-psa.groupe-psa.com/medias/domain1/media11848/2009228-r00lv2pybs-preview.jpg&cashDepositType=flatRate&cashDeposit=1000&annualDistance=10000&term=8000&usePersistedOptions=true&widgetId=iv-finance-widget" id="iv-finance-widget" name="iv-finance-widget" class="iv-finance-widget" async/>
@@ -79,21 +84,21 @@ import TabItem from '@theme/TabItem';
 <TabItem value="HTML">
 
 ```html
-<script src="newvehicle.com/widgets/lib/finance-comparator/loader.js?username=&quoteeUid=&class=&condition=&vrm=&registrationDate=&capCode=&capId=&cashPrice=&vatIncluded=&vatQualifying=&currentOdometerReading=&vehicleImageUrl=&cashDepositType=&cashDeposit=&term=&annualDistance=&dateOnForecourt=&usePersistedOptions=" async/>
+<script src="https://newvehicle.com/widgets/lib/finance-comparator/loader.js?username=&quoteeUid=&class=&condition=&vrm=&registrationDate=&capCode=&capId=&cashPrice=&vatIncluded=&vatQualifying=&currentOdometerReading=&vehicleImageUrl=&cashDepositType=&cashDeposit=&term=&annualDistance=&dateOnForecourt=&usePersistedOptions=" async/>
 ```
 
 </TabItem>
 <TabItem value="php">
 
 ```php
-<script src="newvehicle.com/widgets/lib/finance-comparator/loader.js?username=<?=username?>&quoteeUid=<?=quoteeUid?>&class=<?=class?>&condition=<?=condition?>&vrm=<?=vrm?>&registrationDate=<?=registrationDate?>&capCode=<?=capCode?>&capId=<?=capId?>&cashPrice=<?=cashPrice?>&vatIncluded=<?=vatIncluded?>&vatQualifying=<?=vatQualifying?>&currentOdometerReading=<?=currentOdometerReading?>&vehicleImageUrl=<?=vehicleImageUrl?>&cashDepositType=<?=cashDepositType?>&cashDeposit=<?=cashDeposit?>&term=<?=term?>&annualDistance=<?=annualDistance?>&dateOnForecourt=<?=dateOnForecourt?>&usePersistedOptions=<?=usePersistedOptions?>" async/>
+<script src="https://newvehicle.com/widgets/lib/finance-comparator/loader.js?username=<?=username?>&quoteeUid=<?=quoteeUid?>&class=<?=class?>&condition=<?=condition?>&vrm=<?=vrm?>&registrationDate=<?=registrationDate?>&capCode=<?=capCode?>&capId=<?=capId?>&cashPrice=<?=cashPrice?>&vatIncluded=<?=vatIncluded?>&vatQualifying=<?=vatQualifying?>&currentOdometerReading=<?=currentOdometerReading?>&vehicleImageUrl=<?=vehicleImageUrl?>&cashDepositType=<?=cashDepositType?>&cashDeposit=<?=cashDeposit?>&term=<?=term?>&annualDistance=<?=annualDistance?>&dateOnForecourt=<?=dateOnForecourt?>&usePersistedOptions=<?=usePersistedOptions?>" async/>
 ```
 
 </TabItem>
 <TabItem value="python">
 
 ```py
-<script src="newvehicle.com/widgets/lib/finance-comparator/loader.js?username=<%=username%>&quoteeUid=<%=quoteeUid%>&class=<%=class%>&condition=<%=condition%>&vrm=<%=vrm%>&registrationDate=<%=registrationDate%>&capCode=<%=capCode%>&capId=<%=capId%>&cashPrice=<%=cashPrice%>&vatIncluded=<%=vatIncluded%>&vatQualifying=<%=vatQualifying%>&currentOdometerReading=<%=currentOdometerReading%>&vehicleImageUrl=<%=vehicleImageUrl%>&cashDepositType=<%=cashDepositType%>&cashDeposit=<%=cashDeposit%>&term=<%=term%>&annualDistance=<%=annualDistance%>&dateOnForecourt=<%=dateOnForecourt%>&usePersistedOptions=<%=usePersistedOptions%>" async/>
+<script src="https://newvehicle.com/widgets/lib/finance-comparator/loader.js?username=<%=username%>&quoteeUid=<%=quoteeUid%>&class=<%=class%>&condition=<%=condition%>&vrm=<%=vrm%>&registrationDate=<%=registrationDate%>&capCode=<%=capCode%>&capId=<%=capId%>&cashPrice=<%=cashPrice%>&vatIncluded=<%=vatIncluded%>&vatQualifying=<%=vatQualifying%>&currentOdometerReading=<%=currentOdometerReading%>&vehicleImageUrl=<%=vehicleImageUrl%>&cashDepositType=<%=cashDepositType%>&cashDeposit=<%=cashDeposit%>&term=<%=term%>&annualDistance=<%=annualDistance%>&dateOnForecourt=<%=dateOnForecourt%>&usePersistedOptions=<%=usePersistedOptions%>" async/>
 ```
 
 </TabItem>
