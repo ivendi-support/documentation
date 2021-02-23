@@ -52,6 +52,8 @@ The table on this page contains the full definition and all parameters available
 | Result type |Errors | Errors |Details of the private or public errors |Null or Errors object|
 
 ### Result Asset
+| Grouping | Property | Type | Description |Value|
+| --- | --- | --- | --- | --- |
 | Result asset |CurrentOdometerReading | Integer |Vehicles current odometer reading |As request|
 | Result asset |TermDistance | Integer | Distance the vehicle must not exceed at contract end if the product is distance dependant |Current Odometer Reading + (Annual Distance * Annual Term)|
 | Result asset |Age | Integer |Vehicle ag expressed in AgeUnit|AgeUnit dependant but typically 0 to 60|
@@ -69,6 +71,8 @@ The table on this page contains the full definition and all parameters available
 | Result asset |RequestedTermUnit | TermUnit (Enum) | Unit of term perion. Term of a quote may be adjusted to obtain a quote if AllowedAdjustments is True|As request|
 
 ### Product Group
+| Grouping | Property | Type | Description |Value|
+| --- | --- | --- | --- | --- |
 | Product group |ProductGroupUID | String | UID of the Group the finance product belongs to, if any. Typically if there are any errors, ProductQuote objects will not be returned and hasProcuctQuote will be false ||
 | Product group |QuotedProductGroupUID | String | UID of the quoted Group| Null or array of ProductQuote objects|
 | Product group |FacilityType | FacilityType (Enum) | Finance product type | HP, PCP, LP (lease purchase), CS (conditional sale). FL (finance lease), FS (Fixed sum)|
@@ -81,6 +85,8 @@ The table on this page contains the full definition and all parameters available
 | Product group |Figures | ProductQuoteFigures | Acutal quotation figures| ProductQuoteFigures object |
 
 ### Product Quote
+| Grouping | Property | Type | Description |Value|
+| --- | --- | --- | --- | --- |
 | Product quote |Commissions | Commission (Array) | An ordered array of the Commission objects. with the first element being the Quotee commission the other element objects refer to other layers of commission splitting i.e Dealer commission or Dealer and Broker commission.| Null or Commission objects|
 | Product quote |FacilityType | FacilityType (Enum) | Finance Product Type|  HP, PCP, LP (lease purchase), CS (conditional sale). FL (finance lease), FS (Fixed sum) |
 | Product quote |ProductUID | String | UID of the finance product and settings; typically unique to Quotee|  |
@@ -100,27 +106,93 @@ The table on this page contains the full definition and all parameters available
 | Product quote |QuoteeProductCode | String| A unique code for the quotee's quoted product| |
 
 ### Product Quote Figure
-| Product quote figure|Asset | ProductQuoteAsset ProductQipteAssetMotorVehicle| Asset specific quote details. The ProductQuoteFigures type contains the actual full financial details of the quote, it includes the APR and payments schedule along with the interest charges and fees. Each quote is unique and depends on the finance product and asset| Specific ProductQuoteAssed object. Currently a ProductQuoteAssetMotorVehicle object|
-| Product quote figure |TotalCashPrice | Double| Asset cost| Typically 2000.0 to 100,000.0 |
-| Product quote Figure |TotalDeposit | Double| Customer loan contribution | Typically 0.0 to 50% of Advance|
-| Product quote Figure |Advance | Double| Loan Amount| Quote Typically 2000.0 to 100,000.0 |
-| Product quote Figure |InterestCharges | Double| Amount of interest payable| Quote dependent|
-| Product quote Figure |AcceptanceFee | Double| Typically a fee payable with first payment| Quote dependent|
-| Product quote Figure |OptionToPurchaseFee | Double| Typically a Fee payable with final payment| Quote dependent|
-| Product quote Figure |TotalCharges | Double| Total of interest and charges| Quote dependent|
-| Product quote Figure |TotalPayable | Double| The Total amount payable| Quote dependent|
-| Product quote Figure |FirstPayment | Double| First payment including all fees| Quote dependent|
-| Product quote Figure |RegularPayment | Double| Normal Term Unit Payment| Typically 50.0 to 1000.0|
-| Product quote Figure |FinalPayment | Double| Final Payment including all fess| Quote dependent|
-| Product quote Figure |NumberOfRegularPayments | Integer|Number of normal payments | typically 10 to 58|
-| Product quote Figure |Term | Integer| Duration of the loan | Typically 0 to 60 |
-| Product quote Figure |TermUnit | TermUnit (Enum)| Duration Unit i.e Month, Weekly||
-| Product quote Figure |APR | Double| Annual Percentage Rate (required for representative example)| Typically 2.0 to 20.0|
-| Product quote Figure |AER | Double| Annual Equivalent Rate (required for representative example)| Quote dependent|
-| Product quote Figure |Balloon | Double| Large final payment to take ownership of the asset| Quote and RV dependent|
-| Product quote Figure |BaseRate | Double| Finance min rate used during quoting| Typically 2.0 to 20.0|
-| Product quote Figure |CustomerRate | Double| Actual Finance min rate used during quoting| Typically 2.0 to 20.0|
-| Product quote Figure |InterestRate | Double| Actual CCD interest rate| Typically 2.0 to 20.0|
-| Product quote Figure |EarlySettlements | EarlySettlement (Array)| Example amounts and periods to pay off the loan early if desired| Null or array of EarlySettlement objects|
-| Product quote Figure |Termination | Double| Amount of loan paid when the asset can be handed back to creditor in full settlement of loan| Quote dependent|
-| Product quote Figure |Reposession | Double| Amount of loan paid when the asset cannot be reposessed by creditor for none payment of loan| Quote dependent|
+| Grouping | Property | Type | Description |Value|
+| --- | --- | --- | --- | --- |
+| Product quote figure | Asset | ProductQuoteAsset ProductQipteAssetMotorVehicle| Asset specific quote details. The ProductQuoteFigures type contains the actual full financial details of the quote, it includes the APR and payments schedule along with the interest charges and fees. Each quote is unique and depends on the finance product and asset| Specific ProductQuoteAssed object. Currently a ProductQuoteAssetMotorVehicle object|
+| Product quote figure | TotalCashPrice | Double| Asset cost| Typically 2000.0 to 100,000.0 |
+| Product quote Figure | TotalDeposit | Double | Customer loan contribution | Typically 0.0 to 50% of Advance |
+| Product quote Figure | Advance | Double| Loan Amount | Quote Typically 2000.0 to 100,000.0 |
+| Product quote Figure | InterestCharges | Double | Amount of interest payable| Quote dependent|
+| Product quote Figure | AcceptanceFee | Double | Typically a fee payable with first payment| Quote dependent |
+| Product quote Figure | OptionToPurchaseFee | Double | Typically a Fee payable with final payment| Quote dependent |
+| Product quote Figure | TotalCharges | Double | Total of interest and charges| Quote dependent |
+| Product quote Figure | TotalPayable | Double | The Total amount payable| Quote dependent |
+| Product quote Figure | FirstPayment | Double | First payment including all fees| Quote dependent |
+| Product quote Figure | RegularPayment | Double | Normal Term Unit Payment| Typically 50.0 to 1000.0 |
+| Product quote Figure | FinalPayment | Double | Final Payment including all fess| Quote dependent |
+| Product quote Figure | NumberOfRegularPayments | Integer|Number of normal payments | typically 10 to 58 |
+| Product quote Figure | Term | Integer | Duration of the loan | Typically 0 to 60 |
+| Product quote Figure | TermUnit | TermUnit (Enum) | Duration Unit i.e Month, Weekly||
+| Product quote Figure | APR | Double | Annual Percentage Rate (required for representative example)| Typically 2.0 to 20.0|
+| Product quote Figure | AER | Double | Annual Equivalent Rate (required for representative example)| Quote dependent|
+| Product quote Figure | Balloon | Double | Large final payment to take ownership of the asset| Quote and RV dependent|
+| Product quote Figure | BaseRate | Double | Finance min rate used during quoting| Typically 2.0 to 20.0|
+| Product quote Figure | CustomerRate | Double | Actual Finance min rate used during quoting| Typically 2.0 to 20.0|
+| Product quote Figure | InterestRate | Double | Actual CCD interest rate| Typically 2.0 to 20.0|
+| Product quote Figure | EarlySettlements | EarlySettlement (Array) | Example amounts and periods to pay off the loan early if desired| Null or array of EarlySettlement objects|
+| Product quote Figure | Termination | Double | Amount of loan paid when the asset can be handed back to creditor in full settlement of loan| Quote dependent|
+| Product quote Figure | Repossession | Double | Amount of loan paid when the asset cannot be reposessed by creditor for none payment of loan| Quote dependent|
+| Product quote Figure | Subsidy | Double | Amount payable by the quotee if quotation is below min base rate| Quote dependent|
+| Product quote Figure | FullFees | Fees | Reserved | Reserved|
+| Product quote Figure | AdditionalDeposit | Double | If VAT Qualifying then the cash deposit amount | Quote dependent|
+| Product quote Figure | ValueAddedTax | Double | If VAT Qualifying then the cash deposit amount | Quote dependent|
+| Product quote Figure | AcceptanceFeeSpread | Boolean | Is the acceptance fee spread across the monthly payments | True or False|
+| Product quote Figure | OptionFeeSpread |Boolean| Reserved| Reserved|
+| Product quote Figure | InitialPause | Integer | The number of period before payments start| Typically 0 to 3|
+| Product quote Figure | PaymentSchedules | PaymentSchedule (Array) | Breakdown of payments over the term| PaymentSchedule object|
+
+
+### Payment Schedule
+| Grouping | Property | Type | Description |Value|
+| --- | --- | --- | --- | --- |
+| Payment schedule | Period | Integer| The order in which payments are taken (the payment schedule type contains the breakdown of payments over the term)| typically 1 to 60 |
+| Payment schedule | Amount | Double| The payment amount to be made| typically 50.0 to 1000.0 |
+| Payment schedule | Number | Double| The number of above amounts| typically 1 to 60 |
+
+### Commission
+| Grouping | Property | Type | Description |Value|
+| --- | --- | --- | --- | --- |
+| Commission | Amount | Double| Monetary commission amount: It is possible that rather than commission a subsidy may be payable||
+| Commission | Amount | Double| Monetary commission amount: It is possible that rather than commission a subsidy may be payable||
+
+### Commission
+| Grouping | Property | Type | Description |Value|
+| --- | --- | --- | --- | --- |
+| Product quote asset | AnnualDistanceQuoted | Integer| The actual distance used for this quote. Some finance products have min and max distance constraints. In order to return as many quotes the distance may be altered by Quoteware|Typically 5000 to 45000|
+| Product quote asset | ChargePerOverDistanceUnit | Double| Some finance products charge for exceeding the contract distance quoted. For the UK region finance prodcts this typically will be a few pence per mile, returned as Pounds Steriling|Typically 0.0 to 0.50|
+| Product quote asset | RVDataSet | String| A name given to the RV dataset that may be used during quoting |0-50 characters|
+| Product quote asset | RVPercentageUsed | Double| The percentage of the RV that may be used during quoting |Typically 50.0 to 100.0|
+| Product quote asset | RVDataSetYear | Integer| Reserved |Reserved|
+| Product quote asset | RVDataSetMonth | Integer| Reserved |Reserved|
+| Product quote asset | AdjustedTerm | Boolean| Has the term been adjusted to obtain a quote |True or False|
+| Product quote asset | AdjustedDistance | Boolean| Has the distance been adjusted to obtain a quote |True or False|
+| Product quote asset | PartExchange | Double| Value of existing Motor Vehicle to add to cash deposit |Asset Dependent|
+| Product quote asset | OutstandingSettlement | Double| Amount of current loan still outstanding that needs to be settled. This value will be deducted from the total deposit and any remainder added to the Advance |Asset Dependent|
+| Product quote asset | FinanceDepositAllowance | Double| Deposit allowance paid by the manufacturer in addition to the customers cash deposit |Asset Dependent|
+
+### Commission
+| Grouping | Property | Type | Description |Value|
+| --- | --- | --- | --- | --- |
+| Early settlement | Amount | Double| Money amount of the early settlment type |0 to < Advance|
+| Early settlement | EarlySettlementType | EarlySettlementType (Enum)| Product specific early settlement period |None 0, Third 1, Half 2, ThreeQuarters 3|
+
+### Warnings
+| Grouping | Property | Type | Description |Value|
+| --- | --- | --- | --- | --- |
+| Warnings | hasPrivateWarnings | Boolean | Are there private Warnings? |True or False|
+| Warnings | hasPublicWarnings | Boolean | Are there public Warnings? |True or False|
+| Warnings | PublicWarnings | Warning (Array) | If warning then an array of 1 or more Warning objects |Null or Any Warning objects|
+| Warnings | PrivateWarnings | Warning (Array) | If warning then an array of 1 or more Warning objects |Null or Any Warning objects|
+| Warnings | Message | String | Detail of warning message ||
+| Warnings | Number | Integer | Unique error number to identify the warning ||
+
+### Errors
+| Grouping | Property | Type | Description |Value|
+| --- | --- | --- | --- | --- |
+| Errors | hasPrivateErrors | Boolean | Are there private Errors? |True or False|
+| Errors | hasPublicErrors | Boolean | Are there public Errors? |True or False|
+| Errors | PublicErrors | Error (Array) | If warning then an array of 1 or more Error objects |Null or Any Error objects|
+| Errors | PrivateErrors | Error (Array) | If warning then an array of 1 or more Error objects |Null or Any Error objects|
+| Errors | Message | String | Detail of Error message ||
+| Errors | Number | Integer | Unique error number to identify the Error ||
+
