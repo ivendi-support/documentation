@@ -4,6 +4,9 @@ title: Custom Call To Action
 sidebar_label: Custom Call To Action
 slug: /Custom
 ---
+
+
+
 Occasionally, a dealer may not want one of the button styles from the styles provided in [Apply](./Apply.mdx),  [Car Finance Check](./CFC.mdx), [Reserve](./Reserve.mdx). Another advantage of going the custom button route is that you can implement as many of these on a single page, without the embeddable widget merging all these into one location on the page. This is handy, if for instance, you would like a custom button on a stock listing page.
 
 ## Getting Started
@@ -185,12 +188,10 @@ requestQuotationFromQuotewareV3(
 
 ### All together
 
-```jsx live
-
+```javascript live
 function Button() {
   var FINANCE_CHECK_LINK =
     "https://my.newvehicle.com/start?quoteId=#QUOTEID&imageUrl=#IMAGEURL?width=350&returnUrl=#RETURNURL&redirectTo=finance-check";
-
   function requestQuotationFromQuotewareV3(
     username,
     quoteeUid,
@@ -326,8 +327,4 @@ function Button() {
     </>
   );
 }
-
-
 ```
-
-

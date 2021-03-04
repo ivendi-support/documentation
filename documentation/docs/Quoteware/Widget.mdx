@@ -59,12 +59,31 @@ Have a go playing with the editor below.
 Please note the below is a copy of the generated iframe from the script tag, and is not intended as a demonstration of the actual integration of the widget. It is there for you to play around with the widget parameters. For the integration script see the code section below.
 :::
 
+
+
+
 ```jsx live
 
-<iframe src="https://newvehicle.com/widgets/lib/finance-comparator/?quoteeUid=268E8202-338E-4B26-A6FE-74BCDAB0A357&username=www.ivendimotors.com&class=car&condition=used&vrm=CX17HHA&registrationDate=04/06/2017&cashPrice=12000&vatIncluded=tru&vatQualifying=false&currentOdometerReading=12000&vehicleImageUrl=https://media-psa.groupe-psa.com/medias/domain1/media11848/2009228-r00lv2pybs-preview.jpg&cashDepositType=flatRate&cashDeposit=1000&annualDistance=10000&term=8000&usePersistedOptions=true&widgetId=iv-finance-widget" id="iv-finance-widget" name="iv-finance-widget" class="iv-finance-widget" async/>
+function widget() {
+	function Render() {
+		const script = document.createElement("script");
+		script.type = 'text/javascript';
 
+    script.src = "https://newvehicle.com/widgets/lib/finance-comparator/loader.js?username=www.gforces.co.uk&condition=used&quoteeUid=41119bd12f1ab9d350496cbd6b52b9b30a817476&class=car&vrm=CN67XWG&registrationDate=29/09/2017&capId=71189&cashPrice=4789&currentOdometerReading=18058&term=60&cashDeposit=0&annualDistance=8000&vehicleImageUrl=http://s3-eu-west-1.amazonaws.com/autofs/ndstock/images/stock/2df42e48fc03daa61e16edd25670ce4fef4d4176%2FNDS12033031_CN67XWG_21.jpg";
+    script.async = false;
+
+	  $("#widget").append(script);
+	}
+	return(
+		<>
+		<button id="render" onClick={Render}>
+        Get Results
+      </button>
+<div id="widget"></div>
+</>
+	)
+}
 ```
-
 
 ## Code
 

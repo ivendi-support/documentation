@@ -10,6 +10,9 @@ module.exports = {
   projectName: 'documentation', // Usually your repo name.
   url:'https://ivendi-support.github.io',
   baseUrl:'/documentation/',
+  scripts:[
+      'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'
+  ],
   themeConfig: {
     navbar: {
       title: '',
