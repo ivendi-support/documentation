@@ -5,8 +5,6 @@ sidebar_label: Custom Call To Action
 slug: /Custom
 ---
 
-
-
 Occasionally, a dealer may not want one of the button styles from the styles provided in [Apply](./Apply.mdx),  [Car Finance Check](./CFC.mdx), [Reserve](./Reserve.mdx). Another advantage of going the custom button route is that you can implement as many of these on a single page, without the embeddable widget merging all these into one location on the page. This is handy, if for instance, you would like a custom button on a stock listing page.
 
 ## Getting Started
@@ -18,7 +16,9 @@ To create a custom call to action you will need to generate a URL for the button
 
 The below link is the one that needs to be populated with the results from the Quoteware API:
 ```javascript
-var FINANCE_CHECK_LINK = 'https://my.newvehicle.com/start?quoteId=#QUOTEID&imageUrl=#IMAGEURL?width=350&returnUrl=#RETURNURL&redirectTo=#REDIRECTTO';
+
+https://my.newvehicle.com/start?quoteId=#QUOTEID&imageUrl=#IMAGEURL?width=350&returnUrl=#RETURNURL&redirectTo=#REDIRECTTO
+
 ```
 
 As you can see we have 4 parameters in the url. The parameters are:
@@ -26,16 +26,16 @@ As you can see we have 4 parameters in the url. The parameters are:
 1. imageURL, the url of the image of the vehicle to use
 1. returnURL, Where should the user be returned to after completing the action.
 1. redirectTo, what CTA action should be used:
-	- For a Finance Check CTA use 'redirectTo=finance-check'
-	- For an Apply CTA use 'redirectTo=apply'
-	- For a Reserve CTA ise 'redirectTo=reserve-vehicle'
+	- For a Finance Check CTA use `redirectTo=finance-check`
+	- For an Apply CTA use `redirectTo=apply`
+	- For a Reserve CTA ise `redirectTo=reserve-vehicle`
 
 
 ### Quote ID
 To generate the quoteID you will need to send a request to Quoteware, and then parse the response for the QuoteUID that you would like to use in the finance check. QuoteUID is in the Product Quote Group object in the response.
 
 `application/json`
-```json {13} title="Partial Response"
+```json {13} title="Partial Quoteware Response"
 ...
 },
                   "FunderCode": "BLA",
@@ -81,236 +81,182 @@ First we need to create the button that we will attach the link to
 ### Generate the link
 The following javascript shows the process of getting a quote from quoteware, parsing it for the quoteId and then changing the URL to use that quoteId.
 
-```javascript title="javascript"
-function requestQuotationFromQuotewareV3(
-  username,
-  quoteeUid,
-  term,
-  deposit,
-  annualMileage,
-  vatIncluded,
-  vatQualifying,
-  vehicleCashPrice,
-  vehicleMileage,
-  vehicleCondition,
-  vehicleClass,
-  vehicleRegistrationMark,
-  vehicleIdentity, // The vehicle VRM or CAP Code
-  vehicleIdentityType, // 'VRM' or 'RVC' (CAP)
-  vehicleRegistrationDate,
-  vehicleStockIdentity,
-  vehicleStockLocation,
-  quoteResultCallback
-) {
-  var xhr = new XMLHttpRequest();
 
-  xhr.addEventListener("readystatechange", function () {
-    if (this.readyState === 4) {
-      let quoteResults = JSON.parse(this.responseText);
 
-      for (var i = 0; i < quoteResults.QuoteResults[0].Results.length; i++) {
-        let quoteResult = quoteResults.QuoteResults[0].Results[i];
 
-        quoteResultCallback(quoteResult);
-      }
-    }
-  });
+```jsx title="javascript"
+var FINANCE_CHECK_LINK =
+  "https://my.newvehicle.com/start?quoteId=#QUOTEID&imageUrl=#IMAGEURL?width=350&returnUrl=#RETURNURL&redirectTo=finance-check";
 
-  xhr.open("POST", "https://quoteware3.ivendi.com/quotes");
-  xhr.setRequestHeader("Content-Type", "application/json");
-
-  xhr.send(`{
-    "Credentials": {
-      "Username": "${username}"
-    },
-    "QuoteRequests": [{
-      "QuoteeUID": "${quoteeUid}",
-      "GlobalRequestSettings": {
-        "AllowAdjustments": true
-      },
-      "GlobalRequestParameters": {
-        "Term": "${term}"
-      },
-      "Requests": [{
-        "Figures": {
-          "Asset": {
-            "AnnualDistance": "${annualMileage}",
-            "VATIncluded": ${vatIncluded},
-            "VATQualifying": ${vatQualifying}
-          },
-          "CashDeposit": "${deposit}",
-          "CashPrice": "${vehicleCashPrice}"
-        },
-        "Asset": {
-          "Class": "${vehicleClass}",
-          "Condition": "${vehicleCondition}",
-          "CurrentOdometerReading": "${vehicleMileage}",
-          "Identity": "${vehicleIdentity}",
-          "IdentityType": "${vehicleIdentityType}",
-          "RegistrationDate": "${vehicleRegistrationDate}",
-          "StockIdentity": ${vehicleStockIdentity},
-          "StockLocation": ${vehicleStockLocation},
-          "RegistrationMark": "${vehicleRegistrationMark}"
-        }
-      }]
-    }]
-  }`);
+var vehicleObj = `
+  {
+	"Credentials": {
+		"Username": "www.ivendimotors.com"
+	},
+	"QuoteRequests": [{
+		"QuoteeUID": "268E8202-338E-4B26-A6FE-74BCDAB0A357",
+		"GlobalRequestSettings": {
+			"AllowAdjustments": true
+		},
+		"GlobalRequestParameters": {
+			"Term": "48"
+		},
+		"Requests": [{
+			"Figures": {
+				"Asset": {
+					"AnnualDistance": "10000",
+					"VATIncluded": true,
+					"VATQualifying": false
+				},
+				"CashDeposit": "1000",
+				"CashPrice": "16000"
+			},
+			"Asset": {
+				"Class": "car",
+				"Condition": "used",
+				"CurrentOdometerReading": "13583",
+				"Identity": "CX17HHA",
+				"IdentityType": "VRM",
+				"RegistrationDate": "24/03/2017",
+				"StockIdentity": null,
+				"StockLocation": null,
+				"RegistrationMark": "CX17HHA"
+			}
+		}]
+	}]
 }
+`;
 
-requestQuotationFromQuotewareV3(
-  "www.ivendimotors.com",
-  "22e44ab4-02b5-4179-8d3c-bcbd92ec3a67",
-  48,
-  1000,
-  10000,
-  true,
-  false,
-  12000,
-  28000,
-  "Used",
-  "Car",
-  "CX17HHA",
-  "CX17HHA", // The vehicle VRM or CAP Code
-  "VRM", // 'VRM' or 'RVC' (CAP)
-  "03/03/2017",
-  null,
-  null,
-  function (quoteResult) {
+$.ajax({
+  type: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  url: "https://quoteware3.ivendi.com/quotes",
+  data: vehicleObj,
+  success: (data) => {
+    let quoteResults = data;
+    var quoteResult;
+
+    for (var i = 0; i < quoteResults.QuoteResults[0].Results.length; i++) {
+      quoteResult = quoteResults.QuoteResults[0].Results[i];
+    }
     let hirePurchaseQuotations = quoteResult.ProductGroups.find(
       (x) => x.FacilityType == "HP"
     );
     let firstHirePurchaseQuotationWithoutErrors = hirePurchaseQuotations.ProductQuotes.find(
       (x) => x.hasErrors == false
     );
-  }
-);
+    document.getElementById(
+      "customFinanceCheckButton"
+    ).href = FINANCE_CHECK_LINK.replace(
+      "#QUOTEID",
+      firstHirePurchaseQuotationWithoutErrors.QuoteUID
+    )
+      .replace("#IMAGEURL", "noimage")
+      .replace("#RETURNURL", "noreturn");
+
+    console.log(firstHirePurchaseQuotationWithoutErrors);
+  },
+  error: (e) => {
+    console.log(e);
+  },
+});
+
+
 ```
 
 ### All together
 
-```javascript live
+```jsx live
 function Button() {
-  var FINANCE_CHECK_LINK =
-    "https://my.newvehicle.com/start?quoteId=#QUOTEID&imageUrl=#IMAGEURL?width=350&returnUrl=#RETURNURL&redirectTo=finance-check";
-  function requestQuotationFromQuotewareV3(
-    username,
-    quoteeUid,
-    term,
-    deposit,
-    annualMileage,
-    vatIncluded,
-    vatQualifying,
-    vehicleCashPrice,
-    vehicleMileage,
-    vehicleCondition,
-    vehicleClass,
-    vehicleRegistrationMark,
-    vehicleIdentity, // The vehicle VRM or CAP Code
-    vehicleIdentityType, // 'VRM' or 'RVC' (CAP)
-    vehicleRegistrationDate,
-    vehicleStockIdentity,
-    vehicleStockLocation,
-    quoteResultCallback
-  ) {
-    var xhr = new XMLHttpRequest();
+  function Request() {
+    var FINANCE_CHECK_LINK =
+      "https://my.newvehicle.com/start?quoteId=#QUOTEID&imageUrl=#IMAGEURL?width=350&returnUrl=#RETURNURL&redirectTo=finance-check";
 
-    xhr.addEventListener("readystatechange", function () {
-      if (this.readyState === 4) {
-        let quoteResults = JSON.parse(this.responseText);
+    var vehicleObj = `
+  {
+	"Credentials": {
+		"Username": "www.ivendimotors.com"
+	},
+	"QuoteRequests": [{
+		"QuoteeUID": "268E8202-338E-4B26-A6FE-74BCDAB0A357",
+		"GlobalRequestSettings": {
+			"AllowAdjustments": true
+		},
+		"GlobalRequestParameters": {
+			"Term": "48"
+		},
+		"Requests": [{
+			"Figures": {
+				"Asset": {
+					"AnnualDistance": "10000",
+					"VATIncluded": true,
+					"VATQualifying": false
+				},
+				"CashDeposit": "1000",
+				"CashPrice": "16000"
+			},
+			"Asset": {
+				"Class": "car",
+				"Condition": "used",
+				"CurrentOdometerReading": "13583",
+				"Identity": "CX17HHA",
+				"IdentityType": "VRM",
+				"RegistrationDate": "24/03/2017",
+				"StockIdentity": null,
+				"StockLocation": null,
+				"RegistrationMark": "CX17HHA"
+			}
+		}]
+	}]
+}
+`;
+
+    $.ajax({
+      type: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      url: "https://quoteware3.ivendi.com/quotes",
+      data: vehicleObj,
+      success: (data) => {
+        let quoteResults = data;
+        var quoteResult;
 
         for (var i = 0; i < quoteResults.QuoteResults[0].Results.length; i++) {
-          let quoteResult = quoteResults.QuoteResults[0].Results[i];
-
-          quoteResultCallback(quoteResult);
+          quoteResult = quoteResults.QuoteResults[0].Results[i];
         }
-      }
+        let hirePurchaseQuotations = quoteResult.ProductGroups.find(
+          (x) => x.FacilityType == "HP"
+        );
+        let firstHirePurchaseQuotationWithoutErrors = hirePurchaseQuotations.ProductQuotes.find(
+          (x) => x.hasErrors == false
+        );
+        document.getElementById(
+          "customFinanceCheckButton"
+        ).href = FINANCE_CHECK_LINK.replace(
+          "#QUOTEID",
+          firstHirePurchaseQuotationWithoutErrors.QuoteUID
+        )
+          .replace("#IMAGEURL", "noimage")
+          .replace("#RETURNURL", "noreturn");
+
+        console.log(firstHirePurchaseQuotationWithoutErrors);
+      },
+      error: (e) => {
+        console.log(e);
+      },
     });
-
-    xhr.open("POST", "https://quoteware3.ivendi.com/quotes");
-    xhr.setRequestHeader("Content-Type", "application/json");
-
-    xhr.send(`{
-    "Credentials": {
-      "Username": "${username}"
-    },
-    "QuoteRequests": [{
-      "QuoteeUID": "${quoteeUid}",
-      "GlobalRequestSettings": {
-        "AllowAdjustments": true
-      },
-      "GlobalRequestParameters": {
-        "Term": "${term}"
-      },
-      "Requests": [{
-        "Figures": {
-          "Asset": {
-            "AnnualDistance": "${annualMileage}",
-            "VATIncluded": ${vatIncluded},
-            "VATQualifying": ${vatQualifying}
-          },
-          "CashDeposit": "${deposit}",
-          "CashPrice": "${vehicleCashPrice}"
-        },
-        "Asset": {
-          "Class": "${vehicleClass}",
-          "Condition": "${vehicleCondition}",
-          "CurrentOdometerReading": "${vehicleMileage}",
-          "Identity": "${vehicleIdentity}",
-          "IdentityType": "${vehicleIdentityType}",
-          "RegistrationDate": "${vehicleRegistrationDate}",
-          "StockIdentity": ${vehicleStockIdentity},
-          "StockLocation": ${vehicleStockLocation},
-          "RegistrationMark": "${vehicleRegistrationMark}"
-        }
-      }]
-    }]
-  }`);
   }
-
-  requestQuotationFromQuotewareV3(
-    "www.ivendimotors.com",
-    "22e44ab4-02b5-4179-8d3c-bcbd92ec3a67",
-    48,
-    1000,
-    10000,
-    true,
-    false,
-    12000,
-    28000,
-    "Used",
-    "Car",
-    "CX17HHA",
-    "CX17HHA", // The vehicle VRM or CAP Code
-    "VRM", // 'VRM' or 'RVC' (CAP)
-    "03/03/2017",
-    null,
-    null,
-    function (quoteResult) {
-      let hirePurchaseQuotations = quoteResult.ProductGroups.find(
-        (x) => x.FacilityType == "HP"
-      );
-      let firstHirePurchaseQuotationWithoutErrors = hirePurchaseQuotations.ProductQuotes.find(
-        (x) => x.hasErrors == false
-      );
-
-      document.getElementById(
-        "customFinanceCheckButton"
-      ).href = FINANCE_CHECK_LINK.replace(
-        "#QUOTEID",
-        firstHirePurchaseQuotationWithoutErrors.QuoteUID
-      )
-        .replace("#IMAGEURL", "noimage")
-        .replace("#RETURNURL", "noreturn");
-    }
-  );
   return (
     <>
       <h1>Custom Vehicle Finance Check Call to Action</h1>
-
       <a
         target="_blank"
         rel="noopener noreferrer"
         id="customFinanceCheckButton"
+		onClick={Request}
         style={{
           outline: "none",
           border: "none",
