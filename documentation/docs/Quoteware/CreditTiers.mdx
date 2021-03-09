@@ -12,4 +12,52 @@ as this will always be the lowest credit tier. You can also use this to match up
 ![img](../../static/img/CreditTierWidget.png 'Credit tiers on the widget')
 ###### CreditTier selector as displayed on the calculator
 
-##Credit Tier: Quoteware
+## Credit Tier: Quoteware Request
+
+In a standard [quoteware](../GettingStartedQuoteware.md) request, to specify a credit tier, the field should be placed above the `Figures` field and should be titled `CreditTier`. This will accept a string value of the following:
+
+- 1, which maps to the excellent tier
+- 2, which maps to the very good tier
+- 3, which maps to the good tier
+- 4, which maps to the fair tier
+- 5, which maps to the below average tier
+
+The below is an extract of the quoteware request, showing the placement of the `CreditTier` field.
+
+```json {2} title="application/json"
+...
+			"CreditTier": "",
+			"Figures": {
+				"CashPrice": 7000,
+				"CashDeposit": 1000,
+				"Asset": {
+					"ManualResidualValue": 0,
+					"ResidualValueYear": 0,
+					"ResidualValueMonth": 0,
+					"AnnualDistance": 10000,
+					"PartExchange": 0,
+					"OutstandingSettlement": 0,
+					"VATIncluded": "None",
+					"VATQualifying": "None",
+					"Extras": null
+				}
+			},
+...
+```
+
+## Credit Tier: Payment Search
+
+Similarly to quoteware, a `CreditTier` can be specified for the [Payment Search](./PaymentSearch.mdx) endpoint. The `CreditTier` field follows the same mappings in relation to the widget. See the below request for an example and the placement of the `CreditTier`
+
+Unlike the quoteware endpoint, the `CreditTier` in payment search will accept an array of different credit tiers.
+
+```json {6} title="application/json"
+...
+ Parameters: {
+        Terms: [12, 24, 36, 42, 52, 60],
+        AnnualMileages: [10000, 11000, 12000],
+        Deposits: [500, 1000, 1500],
+        CreditTiers: [""],
+      },
+...
+```

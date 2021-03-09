@@ -64,26 +64,15 @@ Please note the below is a copy of the generated iframe from the script tag, and
 
 ```jsx live
 
-function widget() {
-	function Render() {
-		const script = document.createElement("script");
-		script.type = 'text/javascript';
-
-    script.src = "https://newvehicle.com/widgets/lib/finance-comparator/loader.js?username=www.ivendimotors.com&condition=used&quoteeUid=268E8202-338E-4B26-A6FE-74BCDAB0A3576&class=car&vrm=CN67XWG&registrationDate=29/09/2017&capId=71189&cashPrice=4789&currentOdometerReading=18058&term=60&cashDeposit=0&annualDistance=8000&vehicleImageUrl=http://s3-eu-west-1.amazonaws.com/autofs/ndstock/images/stock/2df42e48fc03daa61e16edd25670ce4fef4d4176%2FNDS12033031_CN67XWG_21.jpg";
-    script.async = false;
-
-	  $("#widget").append(script);
-	}
-	return(
-		<>
-		<button id="render" onClick={Render}>
-        Get Results
-      </button>
-<div id="widget"/>
-</>
-	)
-}
+ <iframe
+        width={770 + "px"}
+        height={1000 + "px"}
+        src={"https://newvehicle.com/widgets/lib/finance-comparator-beta/?username=www.ivendimotors.com&quoteeUid=268E8202-338E-4B26-A6FE-74BCDAB0A357&class=Car&condition=used&vrm=CX17HHA&registrationDate=03/01/2021&capCode=VAAD12ENG3HPIM%20%20%20%20%20%20&capId=72946&cashPrice=16000&vatIncluded=true&vatQualifying=false&currentOdometerReading=12000&vehicleImageUrl=https%3A%2F%2Fmedia-psa.groupe-psa.com%2Fmedias%2Fdomain1%2Fmedia11848%2F2009228-r00lv2pybs-preview.jpg&cashDepositType=flatRate&cashDeposit=1000&term=48&annualDistance=10000&dateOnForecourt=&usePersistedOptions=false&origin=https%3A%2F%2Fsales-widget-demo.ivendi.co%2F&widgetId=iv-finance-widget"}
+        id="iv-finance-widget"
+        name="iv-finance-widget"
+      ></iframe>
 ```
+
 
 ## Code
 
