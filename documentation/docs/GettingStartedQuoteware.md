@@ -8,7 +8,7 @@ The iVendi Website Solutions - Finance Suite consists of several easy-to-integra
 
 There are two main ways that you can use the qouteware
 ### Quoteware
-Quoteware is the name of the engine that generates the quotes used in our products. It has multiple variable parameters that can be heavily customised to pull back different types of quotes depending on what you have specified in the request. 
+Quoteware is the engine that generates the quotes used in our products. It has multiple variable parameters that can be heavily customised to pull back different types of quotes depending on what you have specified in the request. 
 
 The main endpoint generates all information needed to display a 'Full Quote' which is to say that it can be quite bloated. This is due to the fact it powers our [finance compartator widget](Widget).
 
