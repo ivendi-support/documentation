@@ -9,7 +9,7 @@ The documentation thus far has had a focus on quoting for used vehicles, however
 
 ## New Vehicle Quoting: Widget
 
-To quote a new vehicle in [widget](./Widget.mdx), the following criteria will need to be adhered to. A `vrm` must be set to the value "NEW". Since there is no VRM for us to do a lookup on,
+To quote a new vehicle in [widget](Widget), the following criteria will need to be adhered to. A `vrm` must be set to the value "NEW". Since there is no VRM for us to do a lookup on,
 you must provide you own `capId`, as this will identify the vehicle so that a quote can be generated. Similarly, since the vehicle won't have a registration date, the `registrationDate` needs to be set to today's date, rolling.
 
 For example, if the date is 09/03/2021, then the `registrationDate` should also be 09/03/2021.
@@ -84,7 +84,7 @@ Since the widget relies on quoteware to generate its quotes, it is therefore pos
 
 Since payment search is a subset of quoteware, you can also use this for new vehicles. Similarly to the widget and quoteware, there are fields that need to be set specifically for new vehicles.
 `Identifier` needs to be set to the capId of the vehicle along with `IdentifierType` being set to RVC. The `IsNew` flag needs to be set to true. As with the above the `RegistrationNumber` should be set to NEW and the `CurrentMileage` should be 0.
-The `RegistrationDate` should also be today's date, rolling. See the below example Vehicle object extract of a [payment search](./PaymentSearch.mdx) request for an example.
+The `RegistrationDate` should also be today's date, rolling. See the below example Vehicle object extract of a [payment search](PaymentSearch) request for an example.
 
 ```json title="application/json"
 ...
