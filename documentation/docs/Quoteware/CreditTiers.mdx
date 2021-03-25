@@ -4,17 +4,17 @@ title: Credit Tiers
 sidebar_label: Credit Tiers
 slug: /CreditTiers
 ---
-Both [Quoteware](../GettingStartedQuoteware.md) and [Payment Search](./PaymentSearch.mdx) have a field available called `CreditTiers`.
+Both [Quoteware](/documentation/docs/) and [Payment Search](PaymentSearch) have a field available called `CreditTiers`.
 This field is used if the dealer is set up to have Risk Based Pricing (RBP).
 Using this field, you can request just the specific tier of credit that you would like in your response. This can be handy, if for example you want to show the cheapest quote,
-as this will always be the lowest credit tier. You can also use this to match up the quotes from the [Calculator](../Quoteware/Widget.mdx) if they have credit tiers enabled.
+as this will always be the lowest credit tier. You can also use this to match up the quotes from the [Calculator](Widget) if they have credit tiers enabled.
 
 ![img](../../static/img/CreditTierWidget.png 'Credit tiers on the widget')
 ###### CreditTier selector as displayed on the calculator
 
 ## Credit Tier: Quoteware Request
 
-In a standard [quoteware](../GettingStartedQuoteware.md) request, to specify a credit tier, the field should be placed above the `Figures` field and should be titled `CreditTier`. This will accept a string value of the following:
+In a standard [quoteware](/) request, to specify a credit tier, the field should be placed above the `Figures` field and should be titled `CreditTier`. This will accept a string value of the following:
 
 - 1, which maps to the excellent tier
 - 2, which maps to the very good tier
@@ -48,7 +48,7 @@ The below is an extract of the quoteware request, showing the placement of the `
 
 ## Credit Tier: Payment Search
 
-Similarly to quoteware, a `CreditTier` can be specified for the [Payment Search](./PaymentSearch.mdx) endpoint. The `CreditTier` field follows the same mappings in relation to the widget. See the below request for an example and the placement of the `CreditTier`
+Similarly to quoteware, a `CreditTier` can be specified for the [Payment Search](PaymentSearch) endpoint. The `CreditTier` field follows the same mappings in relation to the widget. See the below request for an example and the placement of the `CreditTier`
 
 Unlike the quoteware endpoint, the `CreditTier` in payment search will accept an array of different credit tiers.
 
