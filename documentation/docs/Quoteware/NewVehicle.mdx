@@ -1,16 +1,16 @@
 ---
-id: NewVehicle
-title: New Vehicle
-sidebar_label: New Vehicle
-slug: /NewVehicle
+id: NewVehicles
+title: New Vehicles
+sidebar_label: New Vehicles
+slug: /NewVehicles
 ---
 
-The documentation thus far has had a focus on quoting for used vehicles, however, it is possible to quote new vehicles if certain conditions are met.
+The documentation thus far has had a focus on quoting for used vehicles. However, it is possible to quote new vehicles if certain conditions are met.
 
 ## New Vehicle Quoting: Widget
 
-To quote a new vehicle in [widget](Widget), the following criteria will need to be adhered to. A `vrm` must be set to the value "NEW". Since there is no VRM for us to do a lookup on,
-you must provide you own `capId`, as this will identify the vehicle so that a quote can be generated. Similarly, since the vehicle won't have a registration date, the `registrationDate` needs to be set to today's date, rolling.
+To quote a new vehicle in our [widget](Widget), the following criteria will need to be adhered to. A `vrm` must be set to the value "NEW". Since there is no VRM for us to do a lookup on,
+you must provide your own `capId`, as this will identify the vehicle so that a quote can be generated. Similarly, since the vehicle won't have a registration date, the `registrationDate` needs to be set to today's date, rolling.
 
 For example, if the date is 09/03/2021, then the `registrationDate` should also be 09/03/2021.
 
@@ -32,9 +32,9 @@ function widget() {
   }
   function buildUrl() {
     return (
-      "https://newvehicle.com/widgets/lib/finance-comparator-beta/?username=www.ivendimotors.com&quoteeUid=268E8202-338E-4B26-A6FE-74BCDAB0A357&class=Car&condition=new&vrm=CX17HHA&registrationDate=" +
+      "https://newvehicle.com/widgets/lib/finance-comparator-beta/?username=www.ivendimotors.com&quoteeUid=268E8202-338E-4B26-A6FE-74BCDAB0A357&class=Car&condition=new&vrm=NEW&registrationDate=" +
       todaysDate() +
-      "&capCode=VAAD12ENG3HPIM%20%20%20%20%20%20&capId=72946&cashPrice=16000&vatIncluded=true&vatQualifying=false&currentOdometerReading=0&vehicleImageUrl=https%3A%2F%2Fmedia-psa.groupe-psa.com%2Fmedias%2Fdomain1%2Fmedia11848%2F2009228-r00lv2pybs-preview.jpg&cashDepositType=flatRate&cashDeposit=1000&term=48&annualDistance=10000&dateOnForecourt=" +
+      "&capCode=&capId=96096&cashPrice=30000&vatIncluded=true&vatQualifying=false&currentOdometerReading=0&vehicleImageUrl=https%3A%2F%2Fmedia-psa.groupe-psa.com%2Fmedias%2Fdomain1%2Fmedia11848%2F2009228-r00lv2pybs-preview.jpg&cashDepositType=flatRate&cashDeposit=1000&term=48&annualDistance=10000&dateOnForecourt=" +
       todaysDate() +
       "&usePersistedOptions=false&origin=https%3A%2F%2Fsales-widget-demo.ivendi.co%2F&widgetId=iv-finance-widget"
     );
@@ -56,7 +56,7 @@ function widget() {
 
 ## New Vehicle Quoting: Quoteware
 
-Since the widget relies on quoteware to generate its quotes, it is therefore possible to use new vehicles with quoteware. Similar to the above, the matching fields in the request asset object need to be filled out as below.
+Since the widget relies on Quoteware to generate its quotes, it is therefore possible to use new vehicles with Quoteware. Similar to the above, the matching fields in the request asset object need to be filled out as below.
 
 
 
@@ -68,7 +68,7 @@ Since the widget relies on quoteware to generate its quotes, it is therefore pos
 				"RegistrationMark": "NEW",
 				"Condition": "new",
 				"Source": "Default",
-				"Identity": "72946", // This is the capId
+				"Identity": "96096", // This is the capId
 				"IdentityType": "RVC", //RVC tells quoteware we're using the capId to identify the vehicle
 				"StockIdentity": "",
 				"StockingDate": null,
@@ -82,16 +82,16 @@ Since the widget relies on quoteware to generate its quotes, it is therefore pos
 
 ## New Vehicle Quoting: Payment Search
 
-Since payment search is a subset of quoteware, you can also use this for new vehicles. Similarly to the widget and quoteware, there are fields that need to be set specifically for new vehicles.
+Since payment search is a subset of Quoteware, you can also use this for new vehicles. Similarly to the widget and Quoteware, there are fields that need to be set specifically for new vehicles.
 `Identifier` needs to be set to the capId of the vehicle along with `IdentifierType` being set to RVC. The `IsNew` flag needs to be set to true. As with the above the `RegistrationNumber` should be set to NEW and the `CurrentMileage` should be 0.
 The `RegistrationDate` should also be today's date, rolling. See the below example Vehicle object extract of a [payment search](PaymentSearch) request for an example.
 
 ```json title="application/json"
 ...
 Vehicle: {
-            CashPrice: 6999, //The Cash Price of the Vehicle
+            CashPrice: 30000, //The Cash Price of the Vehicle
             IsNew: true, //Set to true
-            Identifier: "72946", //The CAP ID of the requested vehicle
+            Identifier: "96096", //The CAP ID of the requested vehicle
             IdentifierType: "RVC", //Default to RVC, meaning that CAP data will be used to dictate the calculation.
             Type: "car", //The class of vehicle requested - (  Car  //  Motorbike  //  LCV  )
             StockId: null,
