@@ -4,7 +4,7 @@ title: Quoteware Response Definitions
 sidebar_label: Quoteware Response Definitions
 slug: /ResponseDefinitions
 ---
-The table on this page contains the full definition and all parameters available in a quoteware response. The table is split up by the different objects that form a whole response to allow for easier readability. To see how a full response is formed, see this [example response](ExampleQuotewareResponse)
+The table on this page contains the full definition and all parameters available in a Quoteware response. The table is split up by the different objects that form a whole response to allow for easier readability. To see how a full response is formed, see this [example response](ExampleQuotewareResponse)
 
 ### Quote response types
 
@@ -22,12 +22,12 @@ The table on this page contains the full definition and all parameters available
 ### Quote Result
 | Grouping | Property | Type | Description |Value|
 | --- | --- | --- | --- | --- |
-| Quote result |QuotedResultUID | String |Uid of the quoted result object||
+| Quote result |QuotedResultUID | String |UID of the quoted result object||
 | Quote result |Results | Result (Array) |Array of Result Objects|Null or array of Result  Objects|
 | Quote result |hasResults | Boolean|Whether there are any Result Objects|True/False|
 | Quote result |QuoteeUID | String|UID of the quotee used for quoting purposes||
 | Quote result |ProductRequestUID | String|UID of the ProductRequestUID used for quoting purposes||
-| Quote result |QuoteRequest | QuoteRequest|If requested a copy of the submitted QuoteRequest Object xcluding individual Request Objects||
+| Quote result |QuoteRequest | QuoteRequest|If requested a copy of the submitted QuoteRequest Object excluding individual Request Objects||
 | Quote result |hasErrors | Boolean|Whether there are any Error Objects|True/False|
 | Quote result |hasWarnings | Boolean|Whether there are any Warning Objects|True/False|
 | Quote result |Warnings | Warnings|Details of private or public warnings|Null or Warnings object|
@@ -44,8 +44,8 @@ The table on this page contains the full definition and all parameters available
 | Result type |ProductPackageUID | String |UID of package if ProductRequestUID is a package||
 | Result type |ProductGroups | ProductGroup (Array) |Array of ProductGroup Objects|Null or Array of ProductGroup Objects|
 | Result type |hasProductGroup | Boolean |Are there any ProductGroup objects |True or false|
-| Result type |hasProductGroupWithinPaymentRange | Ternary (Enum) |Indicates the result has Product Group(S) with a wuote within the optional payment range filters |None, True or False|
-| Result type |Request | Request |If reuested, a copy of the submitted individual figures and asset request object ||
+| Result type |hasProductGroupWithinPaymentRange | Ternary (Enum) |Indicates the result has Product Group(s) with a quote within the optional payment range filters |None, True or False|
+| Result type |Request | Request |If requested, a copy of the submitted individual figures and asset request object ||
 | Result type |hasErrors | Boolean |Are there any error objects present |True or false|
 | Result type |hasWarnings | Boolean |Are there any Warning objects |True or false|
 | Result type |Warnings | Warnings |Details of the private or public warnings |Null or Warnings object|
@@ -63,52 +63,52 @@ The table on this page contains the full definition and all parameters available
 | Result asset |Condition | MotorVehicleCondition (Enum) | New or Used| Default 0, New 1, Used 2|
 | Result asset |Identity | String | Vehicle Identity |IdentityType dependant|
 | Result asset |IdentityType | MotorVehicleIdentityType (Enum) |Value used to identify the vehicle and obtain additional details for use during quoting ||
-| Result asset |RegistrationMark | String |Vehicle Registration mark |As request|
-| Result asset |StockIdentity | String | Quotess unique reference for the vehicle |As request|
+| Result asset |RegistrationMark | String |Vehicle Registration Mark |As request|
+| Result asset |StockIdentity | String | Quotee's unique reference for the vehicle |As request|
 | Result asset |StockingDays | Integer |The number of days the vehicle has been in stock as calculated from the request StockingDate ||
 | Result asset |StockLocation | String |Unique ID of the location the vehicle is situated at ||
 | Result asset |RequestedTerm | Integer |The original term requested as per RequestParameters|As request|
-| Result asset |RequestedTermUnit | TermUnit (Enum) | Unit of term perion. Term of a quote may be adjusted to obtain a quote if AllowedAdjustments is True|As request|
+| Result asset |RequestedTermUnit | TermUnit (Enum) | Unit of term period. Term of a quote may be adjusted to obtain a quote if AllowedAdjustments is True|As request|
 
 ### Product Group
 | Grouping | Property | Type | Description |Value|
 | --- | --- | --- | --- | --- |
-| Product group |ProductGroupUID | String | UID of the Group the finance product belongs to, if any. Typically if there are any errors, ProductQuote objects will not be returned and hasProcuctQuote will be false ||
+| Product group |ProductGroupUID | String | UID of the Group the finance product belongs to, if any. Typically, if there are any errors, ProductQuote objects will not be returned and hasProductQuote will be false ||
 | Product group |QuotedProductGroupUID | String | UID of the quoted Group| Null or array of ProductQuote objects|
-| Product group |FacilityType | FacilityType (Enum) | Finance product type | HP, PCP, LP (lease purchase), CS (conditional sale). FL (finance lease), FS (Fixed sum)|
+| Product group |FacilityType | FacilityType (Enum) | Finance product type | HP (Hire Purchase), PCP (Personal Contract Purchase), LP (Lease Purchase), CS (Conditional Sale). FL (Finance Lease), FS (Fixed Sum)|
 | Product group |hasProductQuote | Boolean | Are there any quotes| True or False|
 | Product group |hasProductQuotesWithinPaymentRange | Boolean | Indicates the ProductGroup has a quote within the optional payment range filters | True or False|
 | Product group |hasErrors | Boolean | Are there Error objects present | True or False|
 | Product group |hasWarnings | Boolean | Are there Warning objects present| True or False|
 | Product group |Warnings | Warnings | Details of any private or public warnings| Null or Warnings object|
 | Product group |Errors | Boolean | Details of any private or public errors| Null or Errors object|
-| Product group |Figures | ProductQuoteFigures | Acutal quotation figures| ProductQuoteFigures object |
+| Product group |Figures | ProductQuoteFigures | Actual quotation figures| ProductQuoteFigures object |
 
 ### Product Quote
 | Grouping | Property | Type | Description |Value|
 | --- | --- | --- | --- | --- |
-| Product quote |Commissions | Commission (Array) | An ordered array of the Commission objects. with the first element being the Quotee commission the other element objects refer to other layers of commission splitting i.e Dealer commission or Dealer and Broker commission.| Null or Commission objects|
-| Product quote |FacilityType | FacilityType (Enum) | Finance Product Type|  HP, PCP, LP (lease purchase), CS (conditional sale). FL (finance lease), FS (Fixed sum) |
+| Product quote |Commissions | Commission (Array) | An ordered array of the Commission objects with the first element being the Quotee commission the other element objects refer to when mentioning other layers of commission splitting i.e Dealer commission or Dealer and Broker commission.| Null or Commission objects|
+| Product quote |FacilityType | FacilityType (Enum) | Finance Product Type|  HP (Hire Purchase), PCP (Personal Contract Purchase), LP (lease purchase), CS (conditional sale). FL (finance lease), FS (Fixed sum) |
 | Product quote |ProductUID | String | UID of the finance product and settings; typically unique to Quotee|  |
-| Product quote |ProductName | String | Human Friendly name for the finance product| 0-50 Characters  |
+| Product quote |ProductName | String | Human-friendly name for the finance product| 0-50 Characters  |
 | Product quote |QuoteUID | String | UID of the actual Quote|  |
 | Product quote |ExpiryDate | Date |The date when the quote is no longer valid and a new quote will be required| Typically now + 28 days |
 | Product quote |QuotedDateTime | Date | Date and time quote was calculated| Now  |
 | Product quote |WithinPaymentRange | Ternary (Enum) | Indicates whether the ProductQuote is within the optional payment range filters| None, true, False |
 | Product quote |hasErrors | Boolean |Are there Error objects present | True or False |
-| Product quote |hasWarnings | Boolean | Are there Warning object present| True or False |
+| Product quote |hasWarnings | Boolean | Are there Warning objects present| True or False |
 | Product quote |Warnings | Warnings| Details of any private or public warnings| Null or Warnings object  |
 | Product quote |Errors | Errors| Details of any private or public errors| Null or Errors object  |
 | Product quote |ProductQuoteUID | | |  |
 | Product quote |FunderCode | String| A code that uniquely identifies the finance product funder| Quote dependant  |
-| Product quote |FacilitatorCode | String| A code that uniquely Identifiers the entity that will handle the quote, Either the funder or Intermediary | Quote dependant|
+| Product quote |FacilitatorCode | String| A code that uniquely identifies the entity that will handle the quote, either the funder or Intermediary | Quote dependant|
 | Product quote |FunderProductCode | String| A unique code for the funder's product| Quote dependant|
 | Product quote |QuoteeProductCode | String| A unique code for the quotee's quoted product| |
 
 ### Product Quote Figure
 | Grouping | Property | Type | Description |Value|
 | --- | --- | --- | --- | --- |
-| Product quote figure | Asset | ProductQuoteAsset ProductQipteAssetMotorVehicle| Asset specific quote details. The ProductQuoteFigures type contains the actual full financial details of the quote, it includes the APR and payments schedule along with the interest charges and fees. Each quote is unique and depends on the finance product and asset| Specific ProductQuoteAssed object. Currently a ProductQuoteAssetMotorVehicle object|
+| Product quote figure | Asset | ProductQuoteAsset ProductQuoteAssetMotorVehicle| Asset specific quote details. The ProductQuoteFigures type contains the actual full financial details of the quote. It includes the APR and payments schedule along with the interest charges and fees. Each quote is unique and depends on the finance product and asset| Specific ProductQuoteAsset object. Currently a ProductQuoteAssetMotorVehicle object|
 | Product quote figure | TotalCashPrice | Double| Asset cost| Typically 2000.0 to 100,000.0 |
 | Product quote Figure | TotalDeposit | Double | Customer loan contribution | Typically 0.0 to 50% of Advance |
 | Product quote Figure | Advance | Double| Loan Amount | Quote Typically 2000.0 to 100,000.0 |
@@ -120,7 +120,7 @@ The table on this page contains the full definition and all parameters available
 | Product quote Figure | FirstPayment | Double | First payment including all fees| Quote dependent |
 | Product quote Figure | RegularPayment | Double | Normal Term Unit Payment| Typically 50.0 to 1000.0 |
 | Product quote Figure | FinalPayment | Double | Final Payment including all fess| Quote dependent |
-| Product quote Figure | NumberOfRegularPayments | Integer|Number of normal payments | typically 10 to 58 |
+| Product quote Figure | NumberOfRegularPayments | Integer|Number of normal payments | Typically 10 to 58 |
 | Product quote Figure | Term | Integer | Duration of the loan | Typically 0 to 60 |
 | Product quote Figure | TermUnit | TermUnit (Enum) | Duration Unit i.e Month, Weekly||
 | Product quote Figure | APR | Double | Annual Percentage Rate (required for representative example)| Typically 2.0 to 20.0|
@@ -131,14 +131,14 @@ The table on this page contains the full definition and all parameters available
 | Product quote Figure | InterestRate | Double | Actual CCD interest rate| Typically 2.0 to 20.0|
 | Product quote Figure | EarlySettlements | EarlySettlement (Array) | Example amounts and periods to pay off the loan early if desired| Null or array of EarlySettlement objects|
 | Product quote Figure | Termination | Double | Amount of loan paid when the asset can be handed back to creditor in full settlement of loan| Quote dependent|
-| Product quote Figure | Repossession | Double | Amount of loan paid when the asset cannot be reposessed by creditor for none payment of loan| Quote dependent|
+| Product quote Figure | Repossession | Double | Amount of loan paid when the asset cannot be repossessed by creditor for nonpayment of loan| Quote dependent|
 | Product quote Figure | Subsidy | Double | Amount payable by the quotee if quotation is below min base rate| Quote dependent|
 | Product quote Figure | FullFees | Fees | Reserved | Reserved|
 | Product quote Figure | AdditionalDeposit | Double | If VAT Qualifying then the cash deposit amount | Quote dependent|
 | Product quote Figure | ValueAddedTax | Double | If VAT Qualifying then the cash deposit amount | Quote dependent|
 | Product quote Figure | AcceptanceFeeSpread | Boolean | Is the acceptance fee spread across the monthly payments | True or False|
 | Product quote Figure | OptionFeeSpread |Boolean| Reserved| Reserved|
-| Product quote Figure | InitialPause | Integer | The number of period before payments start| Typically 0 to 3|
+| Product quote Figure | InitialPause | Integer | The number of periods before payments start| Typically 0 to 3|
 | Product quote Figure | PaymentSchedules | PaymentSchedule (Array) | Breakdown of payments over the term| PaymentSchedule object|
 
 
@@ -153,13 +153,13 @@ The table on this page contains the full definition and all parameters available
 | Grouping | Property | Type | Description |Value|
 | --- | --- | --- | --- | --- |
 | Commission | Amount | Double| Monetary commission amount: It is possible that rather than commission a subsidy may be payable||
-| Commission | Amount | Double| Monetary commission amount: It is possible that rather than commission a subsidy may be payable||
+| Commission | VolumeBonus | Double| Monetary volume bonus amount||
 
-### Commission
+### Product Quote Asset
 | Grouping | Property | Type | Description |Value|
 | --- | --- | --- | --- | --- |
-| Product quote asset | AnnualDistanceQuoted | Integer| The actual distance used for this quote. Some finance products have min and max distance constraints. In order to return as many quotes the distance may be altered by Quoteware|Typically 5000 to 45000|
-| Product quote asset | ChargePerOverDistanceUnit | Double| Some finance products charge for exceeding the contract distance quoted. For the UK region finance prodcts this typically will be a few pence per mile, returned as Pounds Steriling|Typically 0.0 to 0.50|
+| Product quote asset | AnnualDistanceQuoted | Integer| The actual distance used for this quote. Some finance products have min and max distance constraints. In order to return as many quotes as possible the distance may be altered by Quoteware|Typically 5000 to 45000|
+| Product quote asset | ChargePerOverDistanceUnit | Double| Some finance products charge for exceeding the contract distance quoted. For the UK region finance products this typically will be a few pence per mile, returned as Pounds Sterling|Typically 0.0 to 0.50|
 | Product quote asset | RVDataSet | String| A name given to the RV dataset that may be used during quoting |0-50 characters|
 | Product quote asset | RVPercentageUsed | Double| The percentage of the RV that may be used during quoting |Typically 50.0 to 100.0|
 | Product quote asset | RVDataSetYear | Integer| Reserved |Reserved|
@@ -170,10 +170,10 @@ The table on this page contains the full definition and all parameters available
 | Product quote asset | OutstandingSettlement | Double| Amount of current loan still outstanding that needs to be settled. This value will be deducted from the total deposit and any remainder added to the Advance |Asset Dependent|
 | Product quote asset | FinanceDepositAllowance | Double| Deposit allowance paid by the manufacturer in addition to the customers cash deposit |Asset Dependent|
 
-### Commission
+### Early Settlement
 | Grouping | Property | Type | Description |Value|
 | --- | --- | --- | --- | --- |
-| Early settlement | Amount | Double| Money amount of the early settlment type |0 to < Advance|
+| Early settlement | Amount | Double| Monetary amount of the early settlement type |0 to < Advance|
 | Early settlement | EarlySettlementType | EarlySettlementType (Enum)| Product specific early settlement period |None 0, Third 1, Half 2, ThreeQuarters 3|
 
 ### Warnings
