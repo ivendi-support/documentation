@@ -180,3 +180,105 @@ function Search() {
 }
 
 ```
+
+Payment search can also be used for getting the cheapest quote applicable to a vehicle on the stock listing page of your website. This can be done by sorting through the results to return the cheapest one.
+An example of this can be found below.
+
+```jsx live
+function Search() {
+  function Request() {
+    const PaymentSearchEndpoint =
+      "https://quoteware3.ivendi.com/paymentsearch/";
+
+    const PaymentSearchObject = {
+      Debug: false,
+      Credentials: {
+        Username: "www.gforces.co.uk",
+        Mode: 0,
+      },
+      Parameters: {
+        Terms: [60, 48],
+        AnnualMileages: [8000, 10000],
+        Deposits: [500],
+        CreditTiers: [""],
+      },
+      VehicleRequests: [
+        {
+          Id: null,
+          Dealer: "41119bd12f1ab9d350496cbd6b52b9b30a817476",
+          Vehicle: {
+            CashPrice: 4989, //The Cash Price of the Vehicle
+            IsNew: false,
+            Identifier: "71786", //The CAP ID of the requested vehicle, CAP Code may also be used here.
+            IdentifierType: "RVC", //Default to RVC, meaning that CAP data will be used to dictate the calculation.
+            Type: "Car", //The class of vehicle requested - (  Car  //  Motorbike  //  LCV  )
+            StockId: null,
+            RegistrationNumber: "WK66JZE", //The Vehicle Registration Number.
+            CurrentMileage: 70862, //The Mileage of the Vehicle.
+            RegistrationDate: "13-09-2016", //The registration date of the Vehicle.
+            ProductUid: null,
+          },
+        },
+      ],
+    };
+
+    function cheapest(result, type) {
+      let payment = [];
+      for (let i = 0; i < result.length; i++) {
+        for (let j = 0; j < result[i].ProductResults.length; j++) {
+          payment.push(result[i].ProductResults[j]);
+        }
+      }
+      return payment
+        .filter((x) => x.Key === type)
+        .sort((a, b) => a.Payment - b.Payment);
+    }
+
+    $.ajax({
+      type: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      url: PaymentSearchEndpoint,
+      data: JSON.stringify(PaymentSearchObject),
+      success: (data) => {
+        let cheapestArray = cheapest(
+          data.VehicleResults[0].FinanceProductResults,
+          "PCP"
+        );
+        $("#paymentsearch-results-cheapest").append(
+          JSON.stringify(cheapestArray[0])
+        );
+      },
+    });
+  }
+  return (
+    <>
+      <script
+        src={"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"}
+      />
+      <h1>Combination Payment Search Cheapest Example</h1>
+      <p>Click the below button to get the chepest quote</p>
+      <p>
+        You will be required to edit this JSFiddle and manipulate the JSON
+        object being sent to tweak it to your desire.
+      </p>
+      <button id="invokepaymentsearch" onClick={Request}>
+        Get Results
+      </button>
+      <div
+        id="paymentsearch-results-cheapest"
+        style={{
+          marginTop: "20px",
+          border: "1px solid black",
+          minHeight: "150px",
+          padding: "15px",
+        }}
+      ></div>
+    </>
+  );
+}
+
+
+
+```
