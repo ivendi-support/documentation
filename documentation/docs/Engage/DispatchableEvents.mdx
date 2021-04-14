@@ -4,3 +4,25 @@ title: Dispatchable Events
 sidebar_label: Dispatchable Events
 slug: /DispatchableEvents
 ---
+
+The engage widget also listens for two events which the host can dispatch. We recommend waiting for the `engage:init` event to fire before dispatching these.
+
+### Update Liked Vehicles
+
+If the vehicle like functionality is enabled, you can update the engage widget with a list of vehicle IDs to indicate which vehicles are liked. This is useful if you have users which have liked vehicles prior to your use of Engage, or if users like vehicles outside the context of search, like on a full page advert. Simply pass in an array of vehicle IDs to a custom event and dispatch it.
+
+```
+window.dispatchEvent(new CustomEvent(‘engage:liked:vehicles:changed’, 
+  { detail: vehicleIDArray }
+));
+```
+
+### Changed Cookie Preferences
+
+To be PECR and GDPR compliant, we disable some analytics and functionality by default. You can raise an event to indicate a users’ cookie preferences. Set either functional or analytical cookies to 0 to indicate off, or 1 to indicate on.
+
+```
+window.dispatchEvent(new CustomEvent(‘engage:cookie:preferences:changed’,
+  { detail: { functional: 0 | 1, analytical: 0 | 1 }
+}));
+```
