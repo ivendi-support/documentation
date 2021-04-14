@@ -4,3 +4,77 @@ title: Custom Events
 sidebar_label: Custom Events
 slug: /CustomEvents
 ---
+
+
+Currently we have four custom events which you can listen out for.
+
+### Vehicle Like Button Click
+
+We emit a custom event named `engage:search:click:likebutton` to indicate a like button click on the widget. The event will contain the following information in the event.detail:
+
+```
+{
+action: ‘like’ if a vehicle was liked, ‘unlike’ if a vehicle was unliked,
+currentLikedVehicles: an array of vehicle objects indicating a users’ currently liked vehicles, selectedFacets: information on filters which a user has applied at the time of liking, searchQuery: the search term the user specified when clicking the like button, vehiclePosition: the position of the search result within the page,
+numberOfHits: total number of hits returned from the search,
+page: the page number,
+hitsPerPage: number of hits per page,
+vehicleId: vehicle ID,
+vrm: vehicle VRM,
+make: vehicle make,
+model: vehicle model,
+price: vehicle price,
+speldtags: vehicle speld tags,
+class: vehicle body style
+}
+```
+
+### Vehicle Card Click
+
+
+We emit a custom event named `engage:search:click:vehiclecard` to indicate a vehicle card click on the widget. The event will contain the following information in the event.detail:
+
+```
+{
+url: The URL of the Full Page Advert,
+vehiclePosition: the position of the search result within the page, hitsPerPage: total number of hits per page
+numberOfHits: total number of hits returned from the search, page: the page number,
+query: the users’ search query,
+selectedFacets: The users selected filters,
+hitsPerPage: number of hits per page,
+vehicle: {
+  vehicleId: vehicle ID,
+  vrm: vehicle VRM,
+  make: vehicle make,
+  model: vehicle model,
+  price: vehicle price, 
+  speldtags: vehicle speld tags, 
+  class: vehicle body style
+  } 
+}
+```
+
+### Search Completed
+
+We emit a custom event named `engage:search:completed` to indicate when new search results populate the widget, once on initial load, and after, typically by changing filters, page number, or search term. The event will contain the following information in the event.detail:
+
+```
+{
+  query: Users’ search term,
+  filtersApplied: filters the user has applied,
+  hits: An array containing all of the search results for a given completed search,
+  nbHits: The total number of hits for the search, nbPages: The total number of pages for a given search
+}
+```
+
+### Engage Load Event
+
+
+We emit a custom event named `engage:init` to indicate when the engage widget has loaded. The event will contain the following information in the event.detail (see Predefined Data for more details):
+
+```
+{
+  predefinedDeposit: The specified predefined deposit,
+  predefinedSearch: The specified predefined search,
+}
+```
