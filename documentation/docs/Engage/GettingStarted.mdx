@@ -9,16 +9,16 @@ iVendi's Engage product is a tool that is placed on car dealership's stock listi
 
 In order to load the Engage WebShop Widget, the following snippet is required. This can be placed within HTML or can be constructed dynamically with JavaScript
 
-```js script
+```jsx
 
-  <script src=”https://webshops.newvehicle.com/bootstrapper/app.js”></script>
-  <div id=”ivendi-engage-widget”></div>
+  <script src="https://webshops.newvehicle.com/bootstrapper/app.js"></script>
+  <div id="ivendi-engage-widget"></div>
   <script>
   var engage = new lib.Webshop({
-    id: “”,
-    entry: “ivendi-engage-widget”,
+    id: "",
+    entry: "ivendi-engage-widget",
 fpaStructure:
-    “https://acmemotors.co.uk/used-cars/{{make}}-{{model}}/id-{{id}}/”,
+    "https://acmemotors.co.uk/used-cars/{{make}}-{{model}}/id-{{id}}/",
 developmentMode: true,
    });
    engage.init();

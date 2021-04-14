@@ -12,7 +12,7 @@ Currently we have four custom events which you can listen out for.
 
 We emit a custom event named `engage:search:click:likebutton` to indicate a like button click on the widget. The event will contain the following information in the event.detail:
 
-```
+```json
 {
 action: ‘like’ if a vehicle was liked, ‘unlike’ if a vehicle was unliked,
 currentLikedVehicles: an array of vehicle objects indicating a users’ currently liked vehicles, selectedFacets: information on filters which a user has applied at the time of liking, searchQuery: the search term the user specified when clicking the like button, vehiclePosition: the position of the search result within the page,
@@ -34,7 +34,7 @@ class: vehicle body style
 
 We emit a custom event named `engage:search:click:vehiclecard` to indicate a vehicle card click on the widget. The event will contain the following information in the event.detail:
 
-```
+```json
 {
 url: The URL of the Full Page Advert,
 vehiclePosition: the position of the search result within the page, hitsPerPage: total number of hits per page
@@ -58,7 +58,7 @@ vehicle: {
 
 We emit a custom event named `engage:search:completed` to indicate when new search results populate the widget, once on initial load, and after, typically by changing filters, page number, or search term. The event will contain the following information in the event.detail:
 
-```
+```json
 {
   query: Users’ search term,
   filtersApplied: filters the user has applied,
