@@ -24,7 +24,7 @@ All feeds require a header row and the following fields.
 | Field Name              | Type    | Note                                                        | Mandatory               |
 |-------------------------|---------|-------------------------------------------------------------|-------------------------|
 | Feed_ID                 | string  | Dealership Id (unique per dealer)                           | Y                       |
-| Vehicle)ID              | string  | Unique ID for the vehicle                                   | Y                       |
+| Vehicle_ID              | string  | Unique ID for the vehicle                                   | Y                       |
 | VRM                     | string  | Vehicle registration number (without spaces)                | Y                       |
 | VRMYear                 | int     | VRM Year (eg 2018)                                          | N                       |
 | VIN                     | string  | Vehicle Identification Number (if available)                | N                       |
