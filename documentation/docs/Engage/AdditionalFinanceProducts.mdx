@@ -4,3 +4,14 @@ title: Additional Finance Products
 sidebar_label: Additional Finance Products
 slug: /AdditionalFinanceProducts
 ---
+
+
+If you would like to offer additional product types that are supported, such as conditional sale, a flag can be passed into the Engage widget bootstrapper as follows:
+
+```
+var engage = new lib.Webshop({
+  ...hasCsFinance: true,
+});
+```
+
+This flag will enable the ‘CS’ finance button to appear within the budget section of your Engage widget filters. CS will also be included within the ‘ANY’ filter.
