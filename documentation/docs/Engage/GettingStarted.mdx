@@ -4,3 +4,31 @@ title: Getting Started
 sidebar_label: Getting Started
 slug: /GettingStarted
 ---
+
+iVendi's Engage product is a tool that is placed on car dealership's stock listing pages and helps deliver highly targeted, personalised vehicle search results for each consumer that visits the site and promotes the affordability of the vehicles.
+
+In order to load the Engage WebShop Widget, the following snippet is required. This can be placed within HTML or can be constructed dynamically with JavaScript
+
+```js script
+
+<script src=”https://webshops.newvehicle.com/bootstrapper/app.js”></script> <div id=”ivendi-engage-widget”></div>
+<script>
+var engage = new lib.Webshop({
+id: “”,
+entry: “ivendi-engage-widget”, fpaStructure:
+“https://acmemotors.co.uk/used-cars/{{make}}-{{model}}/id-{{id}}/”, developmentMode: true,
+}); engage.init(); </script>
+
+```
+
+We recommend that the bootstrapper script is loaded within the <head /> of the page, and as early as possible. We also recommend waiting until the DOM has finished loading before calling engage.init() to ensure that the script has had time to download. Document event listener DOMContentLoaded should suffice. If you are using an iframe, the widget will load automatically without calling the init function.
+
+The init() should not be called more than once per page load, however, this can be delayed with the use of setTimeout or triggered by another user interaction if immediate load is not required.
+
+An ID must be provided, this will be supplied by iVendi and unique to your WebShop.
+
+The entry must match the ID of the element you intend the WebShop to sit within. This is similar to how React and other frameworks require an entry point to mount themselves into the DOM.
+
+The FPA structure is somewhat flexible, in that any combination of static text and vehicle attribute variables can be used. For now, we are assuming that customers will only require make, model and id (unique vehicle id) as suppled in feed files. We will expand this to include other attributes from the feed files as and when required. If your website requires us to off er more variables from the feed file please do let us know. However, if the FPA URL structure requires dynamic content this should be handled via URL redirects from your end.
+
+Development Mode must be set to false for production environments and can be set to true for test, staging and pre-production environments.
