@@ -4,7 +4,7 @@ module.exports = {
     'Call To Action': ['CTA/CFC', 'CTA/Apply', 'CTA/Reserve', 'CTA/Custom'],
     'Videos': ['Videos/HP'],
     'Stock Feed': ['Stockfeed/Stockfeed'],
-    'Engage': ['Engage/Engage'],
+    'Engage': ['Getting Started', 'Custom Events', 'Dispatchable Events', 'Predefined Data', 'Additional Finance Products'],
 
   },
 };
