@@ -11,13 +11,18 @@ In order to load the Engage WebShop Widget, the following snippet is required. T
 
 ```js script
 
-<script src=”https://webshops.newvehicle.com/bootstrapper/app.js”></script> <div id=”ivendi-engage-widget”></div>
-<script>
-var engage = new lib.Webshop({
-id: “”,
-entry: “ivendi-engage-widget”, fpaStructure:
-“https://acmemotors.co.uk/used-cars/{{make}}-{{model}}/id-{{id}}/”, developmentMode: true,
-}); engage.init(); </script>
+  <script src=”https://webshops.newvehicle.com/bootstrapper/app.js”></script>
+  <div id=”ivendi-engage-widget”></div>
+  <script>
+  var engage = new lib.Webshop({
+    id: “”,
+    entry: “ivendi-engage-widget”,
+fpaStructure:
+    “https://acmemotors.co.uk/used-cars/{{make}}-{{model}}/id-{{id}}/”,
+developmentMode: true,
+   });
+   engage.init();
+   </script>
 
 ```
 
