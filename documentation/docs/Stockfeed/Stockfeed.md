@@ -72,5 +72,5 @@ In the first instance please contact our Product Support team at support@ivendi.
 ### Appendix 
 Below is the format we would expect to see for the CSV headers:
 
-Feed_ID|Vehicle_ID|VRM|VRMYear|VIN|DateFirstRegistered|MOTExpiryDate|Make|Model|Vari ant|VehicleType|Mileage|BodyType|Doors|Colour|FuelType|EngineSize|Poweroutput|CO2|Tra nsmission|PreviousOwners|Price|PriceIncludesVat|TradePrice|TradePriceIncludesVat|PurchaseC ondition|WebSite|Origin|V5|ExDemo|FranchiseApproved|PictureUrls|ServiceHistory|FourWheel Drive|Attention Grabber|Options|Description|Comments|CapId|GlassID 
+Feed_ID|Vehicle_ID|VRM|VRMYear|VIN|DateFirstRegistered|MOTExpiryDate|Make|Model|Vari ant|VehicleType|Mileage|BodyType|Doors|Colour|FuelType|EngineSize|Poweroutput|CO2|Tra nsmission|PreviousOwners|Price|PriceIncludesVat|TradePrice|TradePriceIncludesVat|PurchaseC ondition|WebSite|Origin|V5|ExDemo|FranchiseApproved|PictureUrls|ServiceHistory|FourWheel Drive|Attention Grabber|Options|Description|CapId|GlassID 
 
