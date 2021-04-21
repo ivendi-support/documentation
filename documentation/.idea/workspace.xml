@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a24ba8e5-4c98-4029-99c3-79966900a5ee" name="Default Changelist" comment="Work on credit tiers">
-      <change afterPath="$PROJECT_DIR$/static/montserrat-v15-latin-regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/montserrat-v15-latin-regular.woff2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Engage/GettingStarted.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Engage/GettingStarted.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docusaurus.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/docusaurus.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/favicon.ico" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +118,7 @@
       <workItem from="1616672615189" duration="805000" />
       <workItem from="1616684072576" duration="66000" />
       <workItem from="1618408455087" duration="3593000" />
-      <workItem from="1619009429609" duration="3954000" />
+      <workItem from="1619009429609" duration="6124000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1612200010833</created>
@@ -230,7 +225,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618414997711</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="add fonts">
+      <created>1619015137365</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1619015137365</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,6 +275,7 @@
     <MESSAGE value="Update crediTiers" />
     <MESSAGE value="Stockfeed and Engage added." />
     <MESSAGE value="Corrected some formatting in the engage documents." />
-    <option name="LAST_COMMIT_MESSAGE" value="Corrected some formatting in the engage documents." />
+    <MESSAGE value="add fonts" />
+    <option name="LAST_COMMIT_MESSAGE" value="add fonts" />
   </component>
 </project>
