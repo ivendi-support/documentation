@@ -1,26 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="a24ba8e5-4c98-4029-99c3-79966900a5ee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/CTA/Apply.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/CTA/CFC.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/CTA/Custom.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/CTA/Reserve.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/Engage/Engage.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/Stockfeed/Stockfeed.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/Videos/HP.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/Videos/PCP.md" afterDir="false" />
+    <list default="true" id="a24ba8e5-4c98-4029-99c3-79966900a5ee" name="Default Changelist" comment="Work on credit tiers">
+      <change afterPath="$PROJECT_DIR$/static/montserrat-v15-latin-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/montserrat-v15-latin-regular.woff2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Engage/GettingStarted.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Engage/GettingStarted.mdx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docusaurus.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/docusaurus.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sidebars.js" beforeDir="false" afterPath="$PROJECT_DIR$/sidebars.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/favicon.ico" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="PREVIEW_PUSH_PROTECTED_ONLY" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1nhJioEbS92Og7t85XZC4GGQMrI" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -32,12 +52,19 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs/Engage" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docs/Engage" />
+      <recent name="$PROJECT_DIR$/static/img" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/img" />
+      <recent name="$PROJECT_DIR$/static" />
       <recent name="$PROJECT_DIR$/docs/Quoteware" />
     </key>
   </component>
@@ -59,6 +86,9 @@
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>$USER_HOME$/.subversion</configuration>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="a24ba8e5-4c98-4029-99c3-79966900a5ee" name="Default Changelist" comment="" />
@@ -71,12 +101,150 @@
       <workItem from="1611852819558" duration="391000" />
       <workItem from="1611919097510" duration="630000" />
       <workItem from="1611923567434" duration="2805000" />
-      <workItem from="1612175370753" duration="4765000" />
+      <workItem from="1612175370753" duration="5136000" />
+      <workItem from="1612345229124" duration="4284000" />
+      <workItem from="1612436767905" duration="5237000" />
+      <workItem from="1612472994439" duration="77000" />
+      <workItem from="1612515313706" duration="158000" />
+      <workItem from="1612519590072" duration="5861000" />
+      <workItem from="1612864916950" duration="308000" />
+      <workItem from="1612865493715" duration="289000" />
+      <workItem from="1612973409490" duration="1499000" />
+      <workItem from="1613035936714" duration="3000" />
+      <workItem from="1614074438997" duration="12955000" />
+      <workItem from="1614682959530" duration="4806000" />
+      <workItem from="1614691828421" duration="1164000" />
+      <workItem from="1614770549946" duration="9435000" />
+      <workItem from="1614851485896" duration="13755000" />
+      <workItem from="1614938690791" duration="9030000" />
+      <workItem from="1615216639908" duration="1110000" />
+      <workItem from="1615290180689" duration="9255000" />
+      <workItem from="1615370427611" duration="26000" />
+      <workItem from="1616672615189" duration="805000" />
+      <workItem from="1616684072576" duration="66000" />
+      <workItem from="1618408455087" duration="3593000" />
+      <workItem from="1619009429609" duration="3954000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial Commit">
+      <created>1612200010833</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1612200010834</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Initial Commit">
+      <created>1612200105405</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1612200105405</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Reserve added">
+      <created>1612373371553</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1612373371553</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Some changes">
+      <created>1612473040067</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1612473040067</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Started work on Response definitions">
+      <created>1612546004084</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1612546004084</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Quote response">
+      <created>1614084440606</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1614084440607</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Quote response definitions done">
+      <created>1614100841540</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1614100841540</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Started work on Custom CTA">
+      <created>1614706168890</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1614706168891</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Custom CTA done">
+      <created>1614791025061</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1614791025061</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Added Credit tiers">
+      <created>1614878660863</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1614878660863</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Work on credit tiers">
+      <created>1615224541454</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1615224541454</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Most of the documentation has been added. Just polishing needed.">
+      <created>1615308849277</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1615308849277</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Update crediTiers">
+      <created>1616672740474</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1616672740475</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Stockfeed and Engage added.">
+      <created>1618412954607</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1618412954607</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Corrected some formatting in the engage documents.">
+      <created>1618414997711</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1618414997711</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -92,6 +260,19 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit" />
+    <MESSAGE value="Reserve added" />
+    <MESSAGE value="Some changes" />
+    <MESSAGE value="Started work on Response definitions" />
+    <MESSAGE value="Quote response" />
+    <MESSAGE value="Quote response definitions done" />
+    <MESSAGE value="Started work on Custom CTA" />
+    <MESSAGE value="Custom CTA done" />
+    <MESSAGE value="Added Credit tiers" />
+    <MESSAGE value="Work on credit tiers" />
+    <MESSAGE value="Most of the documentation has been added. Just polishing needed." />
+    <MESSAGE value="Update crediTiers" />
+    <MESSAGE value="Stockfeed and Engage added." />
+    <MESSAGE value="Corrected some formatting in the engage documents." />
+    <option name="LAST_COMMIT_MESSAGE" value="Corrected some formatting in the engage documents." />
   </component>
 </project>

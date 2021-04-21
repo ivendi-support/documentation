@@ -18,7 +18,7 @@ module.exports = {
       title: '',
       logo: {
         alt: 'iVendi Logo',
-        src: 'img/logo-dark.png',
+        src: 'img/logo.svg',
         srcDark:'img/logo.svg'
       },
       items: [
