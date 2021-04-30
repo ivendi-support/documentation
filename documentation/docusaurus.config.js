@@ -1,7 +1,7 @@
 module.exports = {
   title: 'iVendi',
   tagline: 'The documentation for iVendi calculator, widgets and quoteware API',
-  url: 'https://ivendi-support.github.io/documentation',
+  url: 'https://documentation.ivendi.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -55,16 +55,16 @@ module.exports = {
           title: 'Community',
           items: [
             {
-              label: 'Facebook',
-              href: 'https://www.facebook.com/iVendiUK',
-            },
-            {
               label: 'LinkedIn',
               href: 'https://www.linkedin.com/company/ivendi',
             },
             {
               label: 'Twitter',
               href: 'https://www.twitter.com/iVendiLtd',
+            },
+            {
+              label: 'Facebook',
+              href: 'https://www.facebook.com/iVendiUK',
             },
           ],
         },
