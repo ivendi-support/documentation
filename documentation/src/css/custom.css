@@ -9,7 +9,7 @@
 @font-face {
   font-family: "Montserrat";
   src: url('/static/montserrat-v15-latin-regular.woff') format('woff');
-  src: url('/documentation/montserrat-v15-latin-regular.woff') format('woff');
+  src: url('/montserrat-v15-latin-regular.woff') format('woff');
 }
 
 :root {

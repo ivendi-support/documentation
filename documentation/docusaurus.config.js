@@ -9,7 +9,7 @@ module.exports = {
   organizationName: 'ivendi-support', // Usually your GitHub org/user name.
   projectName: 'documentation', // Usually your repo name.
   url:'https://ivendi-support.github.io',
-  baseUrl:'/documentation/',
+  baseUrl:'/',
   scripts:[
       'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'
   ],

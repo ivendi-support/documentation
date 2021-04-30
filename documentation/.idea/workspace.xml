@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a24ba8e5-4c98-4029-99c3-79966900a5ee" name="Default Changelist" comment="Work on credit tiers">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/CTA/Custom.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/CTA/Custom.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Quoteware/CreditTiers.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Quoteware/CreditTiers.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Quoteware/PaymentSearch.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Quoteware/PaymentSearch.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docusaurus.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/docusaurus.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/custom.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,11 +69,11 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
-        <script value="start" />
+        <script value="build" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -76,7 +81,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.start" />
+        <item itemvalue="npm.build" />
       </list>
     </recent_temporary>
   </component>
@@ -118,7 +123,11 @@
       <workItem from="1616672615189" duration="805000" />
       <workItem from="1616684072576" duration="66000" />
       <workItem from="1618408455087" duration="3593000" />
-      <workItem from="1619009429609" duration="6124000" />
+      <workItem from="1619009429609" duration="6232000" />
+      <workItem from="1619082149793" duration="68000" />
+      <workItem from="1619082265536" duration="299000" />
+      <workItem from="1619710008665" duration="1844000" />
+      <workItem from="1619775254261" duration="2014000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1612200010833</created>
@@ -232,7 +241,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619015137365</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="add fonts">
+      <created>1619022552634</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1619022552635</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
