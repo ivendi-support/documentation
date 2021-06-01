@@ -1,0 +1,140 @@
+---
+id: BuyOnline
+title: Buy Online
+sidebar_label: Buy Online
+slug: /BuyOnline
+---
+
+The Buy Online Call to Action widget provides an above-the-fold entry point into the orders journey from a full page vehicle advert. When a customer selects the call to action, if the BuyOnline feature is turned on and quotes have been retrieved, they will be taken into the Buy Online journey in NewVehicle.com. If there are any issues clarifying the BuyOnline feature or retrieving quotes, when clicked the CTA will anchor to The Finance Comparator, which must also be integrated on the full page advert.
+
+You can customise the call to action in many different way to find the best fit for your website.
+
+This widget will always fill 100% of the width of its parent element, if you want the width to be smaller, simply wrap the embed script in a smaller element. The minimum width of the widget is 250px.
+
+Note: the widget can only be embedded on a full page vehicle advert, and only one Buy Online widget may be present on the page at any one time.
+
+## Getting Started
+
+* Review the fields and values required to power the Apply Call to Action
+* Use our free demo to test the values
+* Embed the widget using our embed code - available in HTML, PHP & WordPress and Python
+
+
+
+## Parameters
+
+Before you can embed the widget in to your website, you will need to know the following values:
+
+`Denotes optional fields`
+
+|Field Name|Format|Description|
+|--- |--- |--- |
+|textStyle|string|A string representing the text style of widget (see style examples below)|
+|customText|string|A string representing the custom text, if custom is passed for the textStyle property (see style examples below)|
+|iconOption|number|A number representing the icon style of widget (see style examples below)|
+|borderOption|number|A number representing the border style of widget (see style examples below)|
+|username|string|Your username used to access iVendi services|
+|quoteeUid|string|Unique ID for the dealership which the vehicle belongs to. (If you don't have this, please contact iVendi)|
+|class|car, lcv or motorbike|Class of the vehicle.|
+|condition|used or new|Condition of the vehicle|
+|vrm|string|Vehicle Registration Number|
+|registrationDate|DD/MM/YYYY|Registration Date of the vehicle|
+|`capCode`|string|Cap Code of the vehicle (See note on Cap Code below)|
+|capId|number|Cap Id of the vehicle|
+|cashPrice|number|Cash Price|
+|`vatIncluded`|true or false|If true, this indicates that VAT is already included in the cash price in the request. If false, the Finance Comparator will add VAT to the cash price to be displayed to the customer, provided the vehicle is vatQualifying. If not set, VAT calculations are ignored.|
+|`vatQualifying`|true or false|If true, this indicates that the vehicle is VAT Qualifying and is used to drive VAT calculations. This will be the case for most LCVs and all new vehicles. If false, this indicates that the vehicle is instead a VAT margin vehicle, and so VAT will not be calculated. If not set, VAT calculations are also ignored.|
+|currentOdometerReading|number|Current Odometer Reading|
+|vehicleImageUrl|string|URL for the image of the vehicle|
+|`term`|number|Preferred Term|
+|`cashDeposit`|number|value of cash deposit based on cashDepositType|
+|`annualDistance`|number|Expected Annual Mileage|
+|`dateOnForecourt`|dd/mm/yyyy|Date on Forecourt|
+
+:::note
+Where possible, please always provide either a capCode or capId to identify the vehicle. If these fields are not supplied then the VRM will be used to identify the vehicle, but only if your iVendi account supports this.
+:::
+
+### Call To Action Styles
+
+|callToActionStyle|Preview|
+|--- |--- |
+|1| ![1](./../assets/Buy/01.png)|
+|2|![1](./../assets/Buy/02.png)|
+|3|![1](./../assets/Buy/03.png)|
+|4|![1](./../assets/Buy/04.png)|
+|5|![1](./../assets/Buy/05.png)|
+|6|![1](./../assets/Buy/06.png)|
+|custom|![1](./../assets/Buy/custom.png)  If custom is chosen for the 'textStyle' property, then a value must be provided for the 'customText' property, see table below, otherwise it will default to style 1.|
+|default|If any other option is provided other than the above, it will default to style 1|
+
+
+|iconOption|Preview|
+|--- |--- |
+|1| Mouse Icon: ![1](./../assets/Buy/mouse.png)|
+|2|Cart Icon: ![1](./../assets/Buy/cart.png)|
+|3| ![1](./../assets/Buy/default.png) If any value other than '1' or '2' is provided for 'iconOption', no Icon will be shown as default|
+
+|borderOption|Preview|
+|--- |--- |
+|1| Square Border: ![1](./../assets/Buy/square.png)|
+|2|Rounded Border: ![1](./../assets/Buy/rounded.png)|
+|default| If any value other than '1' or '2' is provided for 'borderOption', the square border option will be used as default|
+
+
+## Demo
+
+export const Widget = () => (
+    <iframe src="https://dev.newvehicle.co/widgets/lib/buyonline-cta/?textStyle=1&amp;customText=&amp;iconOption=1&amp;borderOption1=&amp;username=www.ivendimotors.com&amp;quoteeUid=268E8202-338E-4B26-A6FE-74BCDAB0A357&amp;class=car&amp;condition=used&amp;vrm=CX17HHA&amp;registrationDate=04%2F06%2F2017&amp;capCode=&amp;capId=&amp;cashPrice=10000&amp;vatIncluded=true&amp;vatQualifying=false&amp;currentOdometerReading=20000&amp;vehicleImageUrl=https%3A%2F%2Fmedia-psa.groupe-psa.com%2Fmedias%2Fdomain1%2Fmedia11848%2F2009228-r00lv2pybs-preview.jpg&amp;term=36&amp;cashDeposit=500&amp;annualDistance=8000&amp;dateOnForecourt=&amp;origin=https%3A%2F%2Ffiddle.jshell.net%2F_display%2F%3Feditor_console%3Dtrue&amp;widgetId=iv-buyonline-widget" id="iv-buyonline-widget" name="iv-buyonline-widget" class="iv-finance-check-widget"/>
+);
+
+<Widget/>
+
+## Code
+To embed the widget on your website, simply copy the following code and paste it into the part of the page where you want the widget to appear, adding in the values for each of the fields in the url. The script is loaded asynchronously so it wont block the rest of your page from loading.
+
+
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+    defaultValue="HTML"
+    values={[
+        {label: 'HTML', value: 'HTML',},
+        {label: 'PHP', value: 'php',},
+        {label: 'PYTHON', value: 'python',},
+    ]
+    }>
+<TabItem value="HTML">
+
+```html
+
+    <script src="dev.newvehicle.co/widgets/lib/buyonline-cta/loader.js?textStyle=&customText=&iconOption=&borderOption=&username=&quoteeUid=&class=&condition=&vrm=&registrationDate=&capCode=&capId=&cashPrice=&vatIncluded=&vatQualifying=&currentOdometerReading=&vehicleImageUrl=&term=&cashDeposit=&annualDistance=&dateOnForecourt=" async></script>
+
+```
+
+</TabItem>
+<TabItem value="php">
+
+```php
+
+    <script src="dev.newvehicle.co/widgets/lib/buyonline-cta/loader.js?textStyle=<?=textStyle?>&customText=<?=customText?>&iconOption=<?=iconOption?>&borderOption=<?=borderOption?>&username=<?=username?>&quoteeUid=<?=quoteeUid?>&class=<?=class?>&condition=<?=condition?>&vrm=<?=vrm?>&registrationDate=<?=registrationDate?>&capCode=<?=capCode?>&capId=<?=capId?>&cashPrice=<?=cashPrice?>&vatIncluded=<?=vatIncluded?>&vatQualifying=<?=vatQualifying?>&currentOdometerReading=<?=currentOdometerReading?>&vehicleImageUrl=<?=vehicleImageUrl?>&term=<?=term?>&cashDeposit=<?=cashDeposit?>&annualDistance=<?=annualDistance?>&dateOnForecourt=<?=dateOnForecourt?>" async></script>
+
+```
+
+</TabItem>
+<TabItem value="python">
+
+```py
+
+    <script src="dev.newvehicle.co/widgets/lib/buyonline-cta/loader.js?textStyle=<%=textStyle%>&customText=<%=customText%>&iconOption=<%=iconOption%>&borderOption=<%=borderOption%>&username=<%=username%>&quoteeUid=<%=quoteeUid%>&class=<%=class%>&condition=<%=condition%>&vrm=<%=vrm%>&registrationDate=<%=registrationDate%>&capCode=<%=capCode%>&capId=<%=capId%>&cashPrice=<%=cashPrice%>&vatIncluded=<%=vatIncluded%>&vatQualifying=<%=vatQualifying%>&currentOdometerReading=<%=currentOdometerReading%>&vehicleImageUrl=<%=vehicleImageUrl%>&term=<%=term%>&cashDeposit=<%=cashDeposit%>&annualDistance=<%=annualDistance%>&dateOnForecourt=<%=dateOnForecourt%>" async></script>
+
+```
+
+</TabItem>
+</Tabs>
+
+:::note
+The variables used here will be different to the ones inside your template, so will need to be updated accordingly. This may cause errors on your page until the fields are correct for your site.
+:::
