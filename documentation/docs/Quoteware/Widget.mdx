@@ -35,6 +35,7 @@ Before you can embed the Finance Comparator in to your website, you will need to
 |cashPrice|number|Cash Price|
 |`vatIncluded` |true or false|If true, this indicates that VAT is already included in the cash price in the request. If false, the Finance Comparator will add VAT to the cash price to be displayed to the customer, provided the vehicle is vatQualifying. If not set, VAT calculations are ignored.|
 |`vatQualifying`|true or false|If true, this indicates that the vehicle is VAT Qualifying and is used to drive VAT calculations. This will be the case for most LCVs and all new vehicles. If false, this indicates that the vehicle is instead a VAT margin vehicle, and so VAT will not be calculated. If not set, VAT calculations are also ignored.|
+|`excludeVatAsDeposit`|true or false|If true, the VAT will not be counted towards the deposit, and the deposit will be a cash deposit rather than an additional deposit. If false, the VAT will be counted towards the deposit, and any cash deposit will be an additional deposit.|
 |currentOdometerReading|number|Current Odometer Reading|
 |vehicleImageUrl|string|URL for the image of the vehicle|
 |`term`|number|Preferred Term|
